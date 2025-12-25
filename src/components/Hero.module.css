@@ -1,0 +1,96 @@
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+    background: radial-gradient(circle at center, var(--bg-surface) 0%, var(--bg-app) 100%);
+}
+
+.content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--brand-pos);
+    text-shadow: 0 0 20px rgba(8, 217, 214, 0.4);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.primary {
+    background-color: var(--brand-pos);
+    color: var(--text-on-brand);
+    box-shadow: 0 0 15px rgba(8, 217, 214, 0.3);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(8, 217, 214, 0.6);
+}
+
+.secondary {
+    background-color: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+.secondary:hover {
+    border-color: var(--brand-pos);
+    color: var(--brand-pos);
+    box-shadow: 0 0 15px rgba(8, 217, 214, 0.2) inset;
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(8, 217, 214, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}

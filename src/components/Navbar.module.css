@@ -1,0 +1,115 @@
+.navbar {
+    background-color: #252A34;
+    /* Always Dark */
+    border-bottom: 2px solid var(--brand-pos);
+    /* Cyberpunk Line */
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.link {
+    color: #EAEAEA;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 4px 0;
+}
+
+.link:hover {
+    color: var(--brand-pos);
+    text-shadow: 0 0 8px rgba(8, 217, 214, 0.6);
+}
+
+.active {
+    color: var(--brand-pos);
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--brand-pos);
+    box-shadow: 0 0 8px var(--brand-pos);
+}
+
+.cta {
+    background: var(--brand-pos);
+    color: #252A34;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.cta:hover {
+    background: #FFF;
+    box-shadow: 0 0 15px var(--brand-pos);
+}
+
+.menuBtn {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .menuBtn {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        top: 66px;
+        /* Below navbar */
+        left: 0;
+        right: 0;
+        background-color: #252A34;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .show {
+        transform: translateY(0);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+}

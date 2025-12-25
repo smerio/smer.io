@@ -1,0 +1,88 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-app);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 2rem;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--bg-surface);
+    text-shadow: -1px -1px 0 var(--border-color), 1px -1px 0 var(--border-color), -1px 1px 0 var(--border-color), 1px 1px 0 var(--border-color);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.step h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--brand-pos);
+}
+
+.step p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.code {
+    background-color: #1a1a1a;
+    color: #08D9D6;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.connector {
+    flex: 0.5;
+    height: 2px;
+    background: var(--border-color);
+    margin-top: 2rem;
+    /* Align with middle of number roughly */
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .connector {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .connector {
+        display: none;
+    }
+}

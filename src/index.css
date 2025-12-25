@@ -1,0 +1,103 @@
+:root {
+  font-family: Inter, Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Smerio Design System 1.0 - Core Palette Defaults (Dark Mode) */
+  --bg-app: #252A34;
+  --bg-surface: #2F3640;
+  --text-primary: #EAEAEA;
+  --text-secondary: #959FA8;
+  --brand-pos: #08D9D6;
+  --brand-neg: #FF2E63;
+  --text-on-brand: #252A34;
+  --border-color: #3F4756;
+
+  /* Readability Rule: Cyan is fine on dark backgrounds */
+  --text-brand-readable: #08D9D6;
+}
+
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-app: #F5F7FA;
+    --bg-surface: #FFFFFF;
+    --text-primary: #252A34;
+    --text-secondary: #788195;
+    --brand-pos: #08D9D6;
+    --brand-neg: #FF2E63;
+    --text-on-brand: #252A34;
+    --border-color: #E2E8F0;
+
+    /* Readability Rule: Dark Teal for text on white */
+    --text-brand-readable: #009E9B;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Reset & Utils */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-pos);
+}

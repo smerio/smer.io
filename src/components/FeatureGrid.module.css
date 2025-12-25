@@ -1,0 +1,74 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-surface);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-app);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--brand-pos);
+    /* Default to Positive/asset style */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Alternate colors for visual interest */
+.card:nth-child(even) {
+    border-top-color: var(--brand-neg);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 2rem;
+    }
+}
