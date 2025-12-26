@@ -11,7 +11,7 @@ const Hero = () => {
                     The open-source, self-hosted wealth tracker for those who don't trust the cloud with their financial data.
                 </p>
                 <div className={classes.actions}>
-                    <a href="/docs" className={`${classes.btn} ${classes.primary}`}>Get Started</a>
+                    <a href="https://demo.smer.io" target="_blank" rel="noreferrer" className={`${classes.btn} ${classes.primary}`}>Live demo</a>
                     <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer" className={`${classes.btn} ${classes.secondary}`}>
                         View on GitHub
                     </a>

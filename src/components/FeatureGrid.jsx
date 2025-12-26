@@ -30,7 +30,7 @@ const FeatureGrid = () => {
             <div className={classes.container}>
                 <div className={classes.header}>
                     <h2>Stop trading privacy for convenience.</h2>
-                    <p>Standard finance apps sell your data. We don't even have a server to store it.</p>
+                    <p>Your financial life shouldn't live on someone else's computer.</p>
                 </div>
                 <div className={classes.grid}>
                     {features.map((feature, index) => (
