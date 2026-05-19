@@ -1,0 +1,159 @@
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+    background: radial-gradient(circle at 30% 50%, var(--bg-surface) 0%, var(--bg-app) 70%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 3.25rem;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--text-brand-readable);
+    text-shadow: 0 0 20px rgba(8, 217, 214, 0.35);
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 560px;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.primary {
+    background-color: var(--brand-pos);
+    color: var(--text-on-brand);
+    box-shadow: 0 0 15px rgba(8, 217, 214, 0.3);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(8, 217, 214, 0.6);
+}
+
+.secondary {
+    background-color: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+.secondary:hover {
+    border-color: var(--brand-pos);
+    color: var(--brand-pos);
+    box-shadow: 0 0 15px rgba(8, 217, 214, 0.2) inset;
+}
+
+.mockupWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(8, 217, 214, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .copy {
+        text-align: center;
+        align-items: center;
+    }
+
+    .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .mockupWrap {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1.5rem 3rem;
+        min-height: auto;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}

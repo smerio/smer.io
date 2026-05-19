@@ -88,6 +88,10 @@
     padding: 0;
 }
 
+.mobileSubGroup {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .menuBtn {
         display: block;
@@ -102,7 +106,7 @@
         background-color: #252A34;
         flex-direction: column;
         padding: 2rem;
-        gap: 2rem;
+        gap: 1.5rem;
         transform: translateY(-150%);
         transition: transform 0.3s ease-in-out;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -111,5 +115,42 @@
     .show {
         transform: translateY(0);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobileSubGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .mobileDivider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.12);
+        margin: 0.25rem 0 0.5rem;
+    }
+
+    .mobileSubLink {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
+    .mobileSubActive {
+        color: var(--brand-pos);
+    }
+
+    .mobileCta {
+        background: var(--brand-pos);
+        color: var(--text-on-brand);
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+        align-self: flex-start;
     }
 }

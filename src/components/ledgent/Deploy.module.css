@@ -1,0 +1,127 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-surface);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.terminalWrap {
+    background-color: #1a1a1a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.terminalBar {
+    background-color: #252A34;
+    padding: 0.6rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--brand-pos);
+}
+
+.terminalIcon {
+    color: var(--brand-pos);
+}
+
+.terminal {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    color: #08D9D6;
+    font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.callouts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--bg-app);
+    border-left: 4px solid var(--brand-pos);
+    border-radius: 4px;
+}
+
+.callout:nth-child(2) {
+    border-left-color: var(--brand-neg);
+}
+
+.calloutIcon {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.calloutTitle {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.calloutText {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.fineprint {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .header h2 {
+        font-size: 1.85rem;
+    }
+
+    .terminal {
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
+
+    .callouts {
+        grid-template-columns: 1fr;
+    }
+}
