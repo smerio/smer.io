@@ -1,5 +1,5 @@
 import classes from './Features.module.css';
-import { FiDatabase, FiCpu, FiPieChart } from 'react-icons/fi';
+import { FiDatabase, FiCpu, FiPieChart, FiBell } from 'react-icons/fi';
 
 const features = [
     {
@@ -35,6 +35,17 @@ const features = [
             { cmd: null, text: 'Built on top of the same FIFO engine — no separate accounting universe.' },
         ],
     },
+    {
+        icon: <FiBell />,
+        title: 'Price alerts & monitoring',
+        bullets: [
+            { cmd: '/alert BTC > 75000', text: 'Target price triggers — alert when an asset crosses above or below your target.' },
+            { cmd: '/alert SOL 5%', text: 'Relative percent movements — monitor large shifts relative to a custom baseline price.' },
+            { cmd: null, text: 'Automatic volatility warnings — auto-alert when held assets shift by >= 5% in 24 hours.' },
+            { cmd: null, text: 'Smart 12h suppression — avoids alert spam on minor oscillations, unless price moves by an additional >= 2% absolute delta.' },
+            { cmd: '/alerts', text: 'Manage active alerts — list, review, and clear set alert conditions in Telegram.' },
+        ],
+    },
 ];
 
 const Features = () => {
@@ -42,8 +53,8 @@ const Features = () => {
         <section className={classes.section}>
             <div className={classes.container}>
                 <div className={classes.header}>
-                    <h2>One bot. Three jobs.</h2>
-                    <p>Ledger and accounting engine. AI advisor with lot-level context. Virtual sub-funds for goal-based DCA.</p>
+                    <h2>One bot. Four jobs.</h2>
+                    <p>Ledger engine, AI advisor, goal-based virtual funds, and real-time smart price alerting.</p>
                 </div>
                 <div className={classes.grid}>
                     {features.map((f, i) => (
