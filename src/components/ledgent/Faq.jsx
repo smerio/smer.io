@@ -79,6 +79,19 @@ const items = [
             </p>
         ),
     },
+    {
+        id: 'faq-alerts-cost',
+        q: 'Do the 15-minute scheduled price alerts cost anything?',
+        a: (
+            <p>
+                No. The scheduled checks are triggered every 15 minutes by AWS EventBridge
+                Scheduler. At ~2,880 triggers per month, this falls entirely within the
+                AWS EventBridge Free Tier (14M free invocations/month) and Lambda Free Tier
+                (1M free requests/month). Spot prices are fetched from CoinGecko's free public
+                price feed API, making the alerting system add $0.00 incremental cost.
+            </p>
+        ),
+    },
 ];
 
 const Faq = () => {
