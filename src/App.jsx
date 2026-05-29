@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Docs from './pages/Docs';
 import Ledgent from './pages/Ledgent';
+import TelegramBot from './pages/TelegramBot';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="docs" element={<Docs />} />
           <Route path="ledgent" element={<Ledgent />} />
+          <Route path="features/telegram-bot" element={<TelegramBot />} />
+          <Route path="integrations/telegram" element={<TelegramBot />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
