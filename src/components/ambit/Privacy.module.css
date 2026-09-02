@@ -1,0 +1,209 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-app);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid rgba(8, 217, 214, 0.4);
+    background: rgba(8, 217, 214, 0.08);
+    border-radius: 999px;
+    color: var(--text-brand-readable);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.effectiveDate {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.summaryCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.summaryCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summaryIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(244, 162, 97, 0.12);
+    color: #F4A261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.summaryCard h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.summaryCard p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.clause h3 {
+    font-size: 1.35rem;
+    color: #F4A261;
+    margin-bottom: 0.85rem;
+}
+
+.clause p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.75rem 0 1rem 0;
+}
+
+.list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.checkIcon {
+    color: #F4A261;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.noticeBox {
+    background: rgba(244, 162, 97, 0.07);
+    border-left: 3px solid #F4A261;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.contactBox {
+    background: var(--bg-app);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contactRow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.contactIcon {
+    color: #F4A261;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contactLink {
+    color: #F4A261;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contactLink:hover {
+    color: #F8B47C;
+}
+
+.alias {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .summaryCards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .content {
+        padding: 2rem 1.5rem;
+    }
+
+    .title {
+        font-size: 2.1rem;
+    }
+}

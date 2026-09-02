@@ -1,0 +1,322 @@
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+    background: radial-gradient(circle at 35% 45%, #182030 0%, var(--bg-app) 70%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badgeGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(244, 162, 97, 0.4);
+    background: rgba(244, 162, 97, 0.08);
+    border-radius: 999px;
+    color: #F4A261;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.badgeSub {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3.4rem;
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.highlight {
+    color: #F4A261;
+    text-shadow: 0 0 25px rgba(244, 162, 97, 0.35);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #E0DACE;
+    border-left: 2px solid #D97736;
+    padding-left: 1.25rem;
+    margin: 0 0 1.5rem 0;
+    background: rgba(217, 119, 54, 0.05);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.author {
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+}
+
+.subtitle {
+    font-size: 1.12rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 2.25rem;
+    max-width: 580px;
+}
+
+.actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.primary {
+    background-color: #F4A261;
+    color: #14100A;
+    box-shadow: 0 4px 18px rgba(244, 162, 97, 0.35);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(244, 162, 97, 0.55);
+    background-color: #F8B47C;
+}
+
+.secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.secondary:hover {
+    border-color: #F4A261;
+    color: #F4A261;
+    background-color: rgba(244, 162, 97, 0.06);
+}
+
+.tertiary {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+}
+
+.tertiary:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mockupWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialCard {
+    width: 100%;
+    max-width: 420px;
+    background: radial-gradient(120% 90% at 50% 30%, #161E2E 0%, #0A0D14 80%);
+    border: 1px solid rgba(244, 162, 97, 0.22);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(244, 162, 97, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dialHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.dialTitle {
+    font-weight: 600;
+    color: #F0EAE0;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.dialLiveBadge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #F4A261;
+    font-weight: 500;
+}
+
+.liveDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #F4A261;
+    box-shadow: 0 0 8px #F4A261;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.svgContainer {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0 16px;
+}
+
+.solarSvg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 12px rgba(244, 162, 97, 0.25));
+}
+
+.dialFooter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dialPhase {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: #F0EAE0;
+    font-weight: 500;
+}
+
+.sunIcon {
+    color: #F4A261;
+}
+
+.moonIcon {
+    color: #8E93A3;
+}
+
+.dialClock {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.95rem;
+    color: #F4A261;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.dialNote {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #8E93A3;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.glow {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.09) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .copy {
+        text-align: center;
+        align-items: center;
+    }
+
+    .subtitle, .quote {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1.5rem 3rem;
+        min-height: auto;
+    }
+
+    .title {
+        font-size: 2.3rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .svgContainer {
+        width: 220px;
+        height: 220px;
+    }
+}

@@ -25,6 +25,17 @@ const SubNav = () => {
                             </a>
                         );
                     }
+                    if (item.anchor || item.path.startsWith('#')) {
+                        return (
+                            <a
+                                key={item.name}
+                                href={item.path}
+                                className={item.cta ? classes.cta : classes.link}
+                            >
+                                {item.name}
+                            </a>
+                        );
+                    }
                     return (
                         <NavLink
                             key={item.name}
