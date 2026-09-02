@@ -8,6 +8,7 @@ const mainLinks = [
     { name: 'Smerio', path: '/' },
     { name: 'Ledgent', path: '/ledgent' },
     { name: 'Ambit', path: '/ambit' },
+    { name: 'Nomos', path: '/nomos' },
 ];
 
 const Navbar = () => {

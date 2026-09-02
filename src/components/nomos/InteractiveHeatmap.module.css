@@ -1,0 +1,414 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--bg-app);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8189F5;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.28);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.metricsRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.metricCard {
+    background: #181818;
+    border: 1px solid #2A2A2A;
+    border-radius: 18px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.metricLabel {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8A8A8A;
+    margin-bottom: 0.5rem;
+}
+
+.metricVal {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #F5F5F4;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.metricSub {
+    font-size: 0.75rem;
+    color: #7A7A7A;
+}
+
+/* Main Matrix Board */
+.matrixBoard {
+    background: #181818;
+    border: 1px solid #2A2A2A;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.boardControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #262626;
+}
+
+.tabPills {
+    display: flex;
+    gap: 0.5rem;
+    background: #121212;
+    padding: 0.35rem;
+    border-radius: 12px;
+    border: 1px solid #262626;
+    overflow-x: auto;
+}
+
+.tabBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: #8A8A8A;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.tabBtn:hover {
+    color: #F5F5F4;
+}
+
+.tabBtnActive {
+    background: #242424;
+    color: #F5F5F4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.paletteSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.paletteLabel {
+    font-size: 0.8rem;
+    color: #8A8A8A;
+    font-weight: 600;
+}
+
+.paletteDot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.paletteDot:hover {
+    transform: scale(1.15);
+}
+
+.paletteDotActive {
+    border-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.viewContainer {
+    min-height: 280px;
+}
+
+/* Heatmap View */
+.heatmapWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.heatmapHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heatmapTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #D4D4D4;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: #7A7A7A;
+}
+
+.legendBox {
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+}
+
+.gridScroll {
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    scrollbar-width: thin;
+}
+
+.gridTable {
+    display: flex;
+    gap: 0.6rem;
+    min-width: 680px;
+}
+
+.dayLabels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px 0;
+    font-size: 0.7rem;
+    color: #7A7A7A;
+    height: 110px;
+}
+
+.cellsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.gridRow {
+    display: flex;
+    gap: 4px;
+}
+
+.gridCell {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.gridCell:hover {
+    transform: scale(1.3);
+    z-index: 10;
+}
+
+.cellTooltip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #242424;
+    border: 1px solid #333333;
+    padding: 0.5rem 0.9rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #E5E5E5;
+    width: fit-content;
+    animation: fadeInTooltip 0.15s ease-out;
+}
+
+@keyframes fadeInTooltip {
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Charts Wrapper */
+.chartWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chartHeader h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    color: #F5F5F4;
+}
+
+.chartHeader p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #8A8A8A;
+}
+
+.barsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.barLabel {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: #A3A3A3;
+    width: 48px;
+    flex-shrink: 0;
+}
+
+.barTrack {
+    flex-grow: 1;
+    height: 16px;
+    background: #141414;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #242424;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.barCount {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: #F5F5F4;
+    width: 65px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.barTag {
+    font-size: 0.75rem;
+    color: #7A7A7A;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+/* Weekly Chart */
+.weeklyGrid, .volumeGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    height: 200px;
+    align-items: flex-end;
+    padding-top: 1rem;
+}
+
+.volumeGrid {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.weeklyCol, .volumeCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.weeklyBarTrack, .volumeBarTrack {
+    width: 100%;
+    height: 130px;
+    background: #141414;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border: 1px solid #242424;
+}
+
+.weeklyBarFill, .volumeBarFill {
+    width: 100%;
+    border-radius: 8px;
+    transition: height 0.3s ease;
+}
+
+.weeklyDay, .volumeMonth {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #D4D4D4;
+}
+
+.weeklyPct, .volumeCount {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: #8A8A8A;
+}
+
+@media (max-width: 960px) {
+    .metricsRow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .metricsRow {
+        grid-template-columns: 1fr;
+    }
+    .boardControls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .barTag {
+        display: none;
+    }
+}
