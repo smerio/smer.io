@@ -5,10 +5,10 @@ import { FiPlus } from 'react-icons/fi';
 const faqItems = [
     {
         id: 'faq-release',
-        q: 'When is Ambit releasing on the Google Play Store?',
+        q: 'How do I join the Ambit Android Closed Alpha Testing?',
         a: (
             <p>
-                Ambit is currently in active closed development for Android. We are completing the core Compose Canvas astronomical rendering engine and Jetpack Glance home screen widgets. Beta builds will be distributed via Google Play Store testing tracks shortly.
+                Ambit is currently live in closed alpha testing on Google Play! To join: (1) Join the <a href="https://groups.google.com/g/smerio-ambit" target="_blank" rel="noreferrer">Smerio Ambit Google Group</a>, (2) Opt-in on the <a href="https://play.google.com/apps/testing/io.smer.ambit" target="_blank" rel="noreferrer">Play Store Testing Page</a> by clicking &ldquo;Become a tester&rdquo;, and (3) Install from the <a href="https://play.google.com/store/apps/details?id=io.smer.ambit" target="_blank" rel="noreferrer">Google Play Store listing</a>.
             </p>
         ),
     },

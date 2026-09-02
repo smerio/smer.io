@@ -11,7 +11,7 @@ const AMBIT_SUBNAV = [
     { name: 'Features', path: '#features', anchor: true },
     { name: 'Privacy Policy', path: '#privacy', anchor: true },
     { name: 'FAQ', path: '#faq', anchor: true },
-    { name: 'Feedback', path: 'mailto:feedback@smer.io?subject=Ambit%20Feedback%20%26%20Feature%20Request', external: true, cta: true },
+    { name: 'Alpha Testing', path: '#testing', anchor: true, cta: true },
 ];
 
 const NOMOS_SUBNAV = [

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from './Hero.module.css';
-import { FiArrowDown, FiShield, FiMail, FiSun, FiMoon } from 'react-icons/fi';
+import { FiArrowDown, FiShield, FiMail, FiSun, FiMoon, FiUsers } from 'react-icons/fi';
 
 const Hero = () => {
     const [time, setTime] = useState(new Date());
@@ -78,17 +78,17 @@ const Hero = () => {
                     </p>
 
                     <div className={classes.actions}>
-                        <a href="#rings" className={`${classes.btn} ${classes.primary}`}>
+                        <a href="#testing" className={`${classes.btn} ${classes.primary}`}>
+                            <FiUsers aria-hidden="true" />
+                            Join Alpha Testing
+                        </a>
+                        <a href="#rings" className={`${classes.btn} ${classes.secondary}`}>
                             <FiArrowDown aria-hidden="true" />
                             Explore the Rings
                         </a>
-                        <a href="#privacy" className={`${classes.btn} ${classes.secondary}`}>
+                        <a href="#privacy" className={`${classes.btn} ${classes.tertiary}`}>
                             <FiShield aria-hidden="true" />
                             Privacy Policy
-                        </a>
-                        <a href="#feedback" className={`${classes.btn} ${classes.tertiary}`}>
-                            <FiMail aria-hidden="true" />
-                            Get in Touch
                         </a>
                     </div>
                 </div>
