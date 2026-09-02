@@ -22,7 +22,7 @@ const NOMOS_SUBNAV = [
     { name: 'Screens', path: '#gallery', anchor: true },
     { name: 'Privacy Policy', path: '#privacy', anchor: true },
     { name: 'FAQ', path: '#faq', anchor: true },
-    { name: 'Closed Beta', path: 'https://play.google.com/apps/testing/io.smer.nomos', external: true, cta: true },
+    { name: 'Closed Beta', path: '#testing', anchor: true, cta: true },
 ];
 
 export const getSubNavItems = (pathname) => {

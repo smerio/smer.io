@@ -60,14 +60,12 @@ const Hero = () => {
 
                     <div className={classes.ctaRow}>
                         <a
-                            href="https://play.google.com/apps/testing/io.smer.nomos"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#testing"
                             className={classes.primaryBtn}
                         >
                             <FaGooglePlay className={classes.btnIcon} />
                             <span>Join Closed Beta</span>
-                            <FiExternalLink className={classes.btnExternal} />
+                            <FiChevronRight className={classes.btnArrow} />
                         </a>
 
                         <a href="#principles" className={classes.secondaryBtn}>
