@@ -29,6 +29,11 @@ const FAQS = [
         a: 'Yes! Nomos includes a dedicated one-tap Loop Habit Tracker (.db / .zip) importer that automatically normalizes names, converts integer multipliers to true decimals, and preserves your streaks. It also supports generic CSV spreadsheet imports.',
     },
     {
+        id: 'faq-testing',
+        q: 'How do I join the Google Play Closed Testing program?',
+        a: 'Google requires testers to join an authorized group before Google Play allows installation. First, join our Google Group at groups.google.com/g/smerio-nomos with your Android Google account. Next, visit play.google.com/apps/testing/io.smer.nomos and click "Become a tester". Finally, download and install the app from Google Play. Please stay enrolled for at least 14 days to help us reach the open production release milestone!',
+    },
+    {
         id: 'faq-android',
         q: 'Which Android versions and devices are supported?',
         a: 'Nomos supports Android 8.0 (API level 26) and above. It is fully optimized for Android 14 and Android 15 with native Material 3 design, dynamic color matching, and edge-to-edge support.',
