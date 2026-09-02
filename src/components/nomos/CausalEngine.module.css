@@ -1,0 +1,362 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3.5rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #22D3EE;
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+
+.badgeIcon {
+    font-size: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.colTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #F5F5F4;
+    margin: 0 0 1.2rem 0;
+}
+
+.cardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.discoveryCard {
+    background: #181818;
+    border: 1px solid #2A2A2A;
+    border-radius: 20px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.discoveryCard:hover {
+    border-color: #444444;
+    transform: translateY(-2px);
+}
+
+.discoveryCardActive {
+    border-color: #22D3EE;
+    background: #1C2224;
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.tagBadge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+.badgeCyan {
+    background: rgba(6, 182, 212, 0.15);
+    color: #22D3EE;
+    border-color: rgba(6, 182, 212, 0.35);
+}
+
+.badgePurple {
+    background: rgba(139, 92, 246, 0.15);
+    color: #A78BFA;
+    border-color: rgba(139, 92, 246, 0.35);
+}
+
+.badgeRed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #F87171;
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+.sampleSize {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: #8A8A8A;
+}
+
+.discTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #F5F5F4;
+    margin: 0 0 0.5rem 0;
+}
+
+.discHypothesis {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #A3A3A3;
+    margin: 0 0 1.2rem 0;
+}
+
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #262626;
+}
+
+.statBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.statLabel {
+    font-size: 0.7rem;
+    color: #7A7A7A;
+    margin-bottom: 0.2rem;
+}
+
+.statVal {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #E5E5E5;
+}
+
+/* Trial Simulator Column */
+.trialBox {
+    background: #181818;
+    border: 1px solid #2A2A2A;
+    border-radius: 24px;
+    padding: 2rem;
+    position: sticky;
+    top: 100px;
+}
+
+.trialHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #262626;
+}
+
+.trialIconBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.15);
+    color: #34D399;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+}
+
+.trialTitle {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #F5F5F4;
+    margin: 0;
+}
+
+.trialSub {
+    font-size: 0.8rem;
+    color: #8A8A8A;
+}
+
+.trialIntro {
+    font-size: 0.88rem;
+    color: #A3A3A3;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+}
+
+.stepper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.stepItem {
+    display: flex;
+    gap: 1rem;
+    padding: 0.85rem;
+    background: #141414;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.stepItem:hover {
+    background: #1A1A1A;
+}
+
+.stepItemActive {
+    border-color: #10B981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.stepIndicator {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #242424;
+    color: #8A8A8A;
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.stepItemActive .stepIndicator {
+    background: #10B981;
+    color: #04160F;
+}
+
+.stepContent {
+    flex: 1;
+}
+
+.stepTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.stepPhase {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #F5F5F4;
+}
+
+.stepDays {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: #34D399;
+}
+
+.stepDesc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: #8A8A8A;
+    margin: 0;
+}
+
+.verdictCard {
+    background: #141414;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 18px;
+    padding: 1.2rem;
+}
+
+.verdictTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.verdictBadge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #34D399;
+}
+
+.verdictRisk {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #FBBF24;
+}
+
+.verdictBody {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #D4D4D4;
+    margin-bottom: 1rem;
+}
+
+.verdictFooter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.phaseAdvanceBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #10B981;
+    color: #04160F;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.phaseAdvanceBtn:hover {
+    background: #34D399;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 960px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+    .trialBox {
+        position: static;
+    }
+}

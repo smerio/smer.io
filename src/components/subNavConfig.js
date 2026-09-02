@@ -14,8 +14,20 @@ const AMBIT_SUBNAV = [
     { name: 'Feedback', path: 'mailto:feedback@smer.io?subject=Ambit%20Feedback%20%26%20Feature%20Request', external: true, cta: true },
 ];
 
+const NOMOS_SUBNAV = [
+    { name: 'Pillars', path: '#principles', anchor: true },
+    { name: '1-Tap Log', path: '#fast-log', anchor: true },
+    { name: 'Momentum', path: '#momentum', anchor: true },
+    { name: 'Causal Engine', path: '#causal-discovery', anchor: true },
+    { name: 'Screens', path: '#gallery', anchor: true },
+    { name: 'Privacy Policy', path: '#privacy', anchor: true },
+    { name: 'FAQ', path: '#faq', anchor: true },
+    { name: 'Closed Beta', path: 'https://play.google.com/apps/testing/io.smer.nomos', external: true, cta: true },
+];
+
 export const getSubNavItems = (pathname) => {
     if (pathname === '/' || pathname.startsWith('/docs') || pathname.startsWith('/features')) return SMERIO_SUBNAV;
     if (pathname === '/ambit' || pathname.startsWith('/ambit') || pathname === '/privacy') return AMBIT_SUBNAV;
+    if (pathname === '/nomos' || pathname.startsWith('/nomos')) return NOMOS_SUBNAV;
     return [];
 };

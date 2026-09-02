@@ -6,9 +6,11 @@ const Footer = () => {
         <footer className={classes.footer}>
             <div className={classes.container}>
                 <div className={classes.links}>
+                    <Link to="/nomos">Nomos (Android)</Link>
                     <Link to="/ambit">Ambit (Android)</Link>
                     <Link to="/ledgent">Ledgent</Link>
-                    <Link to="/ambit#privacy">Privacy Policy</Link>
+                    <Link to="/nomos#privacy">Nomos Privacy</Link>
+                    <Link to="/ambit#privacy">Ambit Privacy</Link>
                     <Link to="/docs">Documentation</Link>
                     <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer">GitHub</a>
                     <a href="https://github.com/smerio/smerio/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
