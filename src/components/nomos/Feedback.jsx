@@ -31,7 +31,7 @@ const STEPS = [
 
 const Feedback = () => {
     return (
-        <section className={classes.section} id="feedback">
+        <section className={classes.section} id="testing">
             <div className={classes.container}>
                 <div className={classes.card}>
                     <div className={classes.badge}>Alpha Testing & Community</div>
@@ -72,7 +72,7 @@ const Feedback = () => {
                     </div>
 
                     {/* Feedback & Feature Requests Section */}
-                    <div className={classes.feedbackSection}>
+                    <div className={classes.feedbackSection} id="feedback">
                         <h3 className={classes.feedbackTitle}>Feedback, Ideas & Feature Requests</h3>
                         <p className={classes.feedbackSub}>
                             Post your feature ideas in the group forum or send direct emails to the core development team:
