@@ -1,0 +1,129 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 4rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(244, 162, 97, 0.4);
+    background: rgba(244, 162, 97, 0.08);
+    border-radius: 999px;
+    color: #F4A261;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.highlight {
+    color: #F4A261;
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: var(--bg-app);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(244, 162, 97, 0.4);
+}
+
+.cardHighlight {
+    composes: card;
+    background: radial-gradient(120% 120% at 50% 20%, #1a2336 0%, var(--bg-app) 100%);
+    border: 1px solid rgba(244, 162, 97, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(244, 162, 97, 0.12);
+}
+
+.iconWrapLinear,
+.iconWrapCyclical,
+.iconWrapCheck {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.iconWrapLinear {
+    background: rgba(255, 46, 99, 0.1);
+    color: var(--brand-neg);
+    border: 1px solid rgba(255, 46, 99, 0.2);
+}
+
+.iconWrapCyclical {
+    background: rgba(244, 162, 97, 0.15);
+    color: #F4A261;
+    border: 1px solid rgba(244, 162, 97, 0.4);
+}
+
+.iconWrapCheck {
+    background: rgba(8, 217, 214, 0.1);
+    color: var(--brand-pos);
+    border: 1px solid rgba(8, 217, 214, 0.2);
+}
+
+.cardTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.85rem;
+    color: var(--text-primary);
+}
+
+.cardText {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}

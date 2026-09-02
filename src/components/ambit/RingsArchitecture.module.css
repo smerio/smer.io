@@ -1,0 +1,141 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-app);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 4rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(244, 162, 97, 0.4);
+    background: rgba(244, 162, 97, 0.08);
+    border-radius: 999px;
+    color: #F4A261;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.highlight {
+    color: #F4A261;
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.ringsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ringCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 3rem;
+    align-items: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.ringCard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(244, 162, 97, 0.35);
+}
+
+.ringVisual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0A0D14;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ringContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ringLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #F4A261;
+    margin-bottom: 0.5rem;
+}
+
+.ringTitle {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.ringDesc {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    max-width: 780px;
+}
+
+.featurePill {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(244, 162, 97, 0.08);
+    border: 1px solid rgba(244, 162, 97, 0.25);
+    color: #E0DACE;
+}
+
+@media (max-width: 900px) {
+    .ringCard {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 2rem;
+    }
+
+    .ringVisual {
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .ringContent {
+        align-items: center;
+        text-align: center;
+    }
+
+    .ringDesc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

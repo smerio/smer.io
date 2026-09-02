@@ -7,6 +7,7 @@ import { getSubNavItems } from './subNavConfig';
 const mainLinks = [
     { name: 'Smerio', path: '/' },
     { name: 'Ledgent', path: '/ledgent' },
+    { name: 'Ambit', path: '/ambit' },
 ];
 
 const Navbar = () => {
@@ -56,6 +57,15 @@ const Navbar = () => {
                                         href={item.path}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className={item.cta ? classes.mobileCta : classes.mobileSubLink}
+                                        onClick={close}
+                                    >
+                                        {item.name}
+                                    </a>
+                                ) : (item.anchor || item.path.startsWith('#')) ? (
+                                    <a
+                                        key={item.name}
+                                        href={item.path}
                                         className={item.cta ? classes.mobileCta : classes.mobileSubLink}
                                         onClick={close}
                                     >
