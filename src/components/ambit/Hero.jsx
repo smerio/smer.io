@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from './Hero.module.css';
-import { FiArrowDown } from 'react-icons/fi';
+import { FiArrowDown, FiSun, FiMoon } from 'react-icons/fi';
 import { FaGooglePlay } from 'react-icons/fa';
 
 const Hero = () => {
