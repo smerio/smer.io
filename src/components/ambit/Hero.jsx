@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import classes from './Hero.module.css';
-import { FiArrowDown, FiShield, FiMail, FiSun, FiMoon, FiUsers } from 'react-icons/fi';
+import { FiArrowDown, FiShield, FiMail, FiSun, FiMoon, FiUsers, FiDownload } from 'react-icons/fi';
+import { FaGooglePlay } from 'react-icons/fa';
 
 const Hero = () => {
     const [time, setTime] = useState(new Date());
@@ -78,18 +79,31 @@ const Hero = () => {
                     </p>
 
                     <div className={classes.actions}>
-                        <a href="#testing" className={`${classes.btn} ${classes.primary}`}>
-                            <FiUsers aria-hidden="true" />
-                            Join Alpha Testing
+                        <a
+                            href="https://play.google.com/store/apps/details?id=io.smer.ambit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${classes.btn} ${classes.primary}`}
+                        >
+                            <FaGooglePlay aria-hidden="true" />
+                            Download on Google Play
                         </a>
-                        <a href="#rings" className={`${classes.btn} ${classes.secondary}`}>
+                        <a href="#download" className={`${classes.btn} ${classes.secondary}`}>
+                            <FiDownload aria-hidden="true" />
+                            Install Options
+                        </a>
+                        <a href="#rings" className={`${classes.btn} ${classes.tertiary}`}>
                             <FiArrowDown aria-hidden="true" />
                             Explore the Rings
                         </a>
-                        <a href="#privacy" className={`${classes.btn} ${classes.tertiary}`}>
-                            <FiShield aria-hidden="true" />
-                            Privacy Policy
-                        </a>
+                    </div>
+
+                    <div className={classes.heroTrustNote}>
+                        <span className={classes.trustHighlight}>✓ Public Release on Google Play</span>
+                        <span className={classes.trustDivider}>•</span>
+                        <span>Zero Trackers</span>
+                        <span className={classes.trustDivider}>•</span>
+                        <span>No Testing Program Required</span>
                     </div>
                 </div>
 

@@ -1,28 +1,29 @@
 import classes from './Feedback.module.css';
-import { FiMail, FiUsers, FiExternalLink, FiInfo, FiMessageSquare } from 'react-icons/fi';
+import { FiMail, FiUsers, FiExternalLink, FiInfo, FiMessageSquare, FiCheckCircle, FiCheck } from 'react-icons/fi';
+import { FaGooglePlay } from 'react-icons/fa';
 
-const STEPS = [
+const BETA_STEPS = [
     {
         num: '1',
-        title: 'Join Tester Group',
-        desc: 'Join the official Smerio Ambit Google Group to get authorized on Google Play.',
+        title: 'Join Beta Group',
+        desc: 'Join the official Smerio Ambit Google Group to authorize your account for beta tracks.',
         btnText: 'Join Google Group',
         url: 'https://groups.google.com/g/smerio-ambit',
         accent: '#F4A261',
     },
     {
         num: '2',
-        title: 'Opt-in to Testing',
-        desc: 'Open the testing opt-in page and click the "Become a tester" button.',
+        title: 'Opt-in on Play Store',
+        desc: 'Open Google Play testing opt-in and click "Become a tester" with one click.',
         btnText: 'Opt-in on Play Store',
         url: 'https://play.google.com/apps/testing/io.smer.ambit',
         accent: '#08D9D6',
     },
     {
         num: '3',
-        title: 'Install from Play Store',
-        desc: 'Open the Google Play store listing on your Android device and click "Install".',
-        btnText: 'Install App (Play Store)',
+        title: 'Get Beta Builds',
+        desc: 'Install or update Ambit from Google Play to automatically receive upcoming pre-release features.',
+        btnText: 'Open in Play Store',
         url: 'https://play.google.com/store/apps/details?id=io.smer.ambit',
         accent: '#E9C46A',
     },
@@ -30,51 +31,111 @@ const STEPS = [
 
 const Feedback = () => {
     return (
-        <section className={classes.section} id="testing">
+        <section className={classes.section} id="download">
+            <div id="testing" className={classes.anchorTarget} aria-hidden="true" />
+            <div id="beta" className={classes.anchorTarget} aria-hidden="true" />
+
             <div className={classes.container}>
                 <div className={classes.card}>
-                    <div className={classes.badge}>Alpha Testing & Community</div>
-                    <h2 className={classes.title}>Join Ambit Closed Testing</h2>
+                    <div className={classes.badge}>Download Ambit · Android</div>
+                    <h2 className={classes.title}>Install Ambit on Android</h2>
                     <p className={classes.desc}>
-                        Ambit is actively in closed testing on Google Play. Follow these 3 simple steps to get early access on your Android phone and help shape the future of cyclical, distraction-free time tracking.
+                        Ambit is available now on the Google Play Store. Free, local-first, zero trackers, and no user accounts. Choose the direct public installation below, or optionally join our Beta program for upcoming builds.
                     </p>
 
-                    {/* 3-Step Testing Onboarding Flow */}
-                    <div className={classes.stepsGrid}>
-                        {STEPS.map((s) => (
-                            <div key={s.num} className={classes.stepCard} style={{ '--step-accent': s.accent }}>
-                                <div className={classes.stepNum} style={{ background: `${s.accent}20`, color: s.accent, borderColor: `${s.accent}40` }}>
-                                    {s.num}
+                    {/* Direct Public Download Card (No Testing Required) */}
+                    <div className={classes.directCard}>
+                        <div className={classes.directHeader}>
+                            <div className={classes.directBadge}>
+                                <FiCheckCircle className={classes.badgeIcon} />
+                                <span>Official Public Release · Stable</span>
+                            </div>
+                            <span className={classes.freeLabel}>No Testing Required</span>
+                        </div>
+
+                        <div className={classes.directBody}>
+                            <div className={classes.directText}>
+                                <h3 className={classes.directTitle}>Install Directly from Google Play</h3>
+                                <p className={classes.directDesc}>
+                                    Download the stable release immediately to your Android device. No Google Groups, waitlists, or testing programs required. Pure cyclical, distraction-free time awareness.
+                                </p>
+                                <div className={classes.perksList}>
+                                    <span className={classes.perkItem}><FiCheck className={classes.perkIcon} /> Direct 1-Tap Install</span>
+                                    <span className={classes.perkItem}><FiCheck className={classes.perkIcon} /> No Account or Sign-up</span>
+                                    <span className={classes.perkItem}><FiCheck className={classes.perkIcon} /> 100% On-Device & Offline</span>
+                                    <span className={classes.perkItem}><FiCheck className={classes.perkIcon} /> Zero Trackers or Ads</span>
                                 </div>
-                                <h3 className={classes.stepTitle}>{s.title}</h3>
-                                <p className={classes.stepDesc}>{s.desc}</p>
+                            </div>
+
+                            <div className={classes.directAction}>
                                 <a
-                                    href={s.url}
+                                    href="https://play.google.com/store/apps/details?id=io.smer.ambit"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={classes.stepBtn}
-                                    style={{ '--btn-accent': s.accent }}
+                                    className={classes.installBtn}
                                 >
-                                    <span>{s.btnText}</span>
-                                    <FiExternalLink size={13} />
+                                    <FaGooglePlay size={22} />
+                                    <div className={classes.btnTextWrap}>
+                                        <span className={classes.btnSub}>GET IT ON</span>
+                                        <span className={classes.btnMain}>Google Play</span>
+                                    </div>
+                                    <FiExternalLink size={16} />
                                 </a>
+                                <span className={classes.actionHint}>Android 8.0+ · Sandboxed Local DB</span>
                             </div>
-                        ))}
-                    </div>
-
-                    {/* 14-Day Notice Banner */}
-                    <div className={classes.noticeBanner}>
-                        <FiInfo className={classes.noticeIcon} />
-                        <div className={classes.noticeContent}>
-                            <strong>Testing Program Note:</strong> Please remain enrolled in the closed testing program for at least <strong>14 consecutive days</strong> to help us qualify for the open Google Play production release.
                         </div>
                     </div>
 
-                    {/* Feedback & Feature Requests Section */}
+                    {/* Optional Beta Testing Program */}
+                    <div className={classes.betaSection}>
+                        <div className={classes.betaHeader}>
+                            <div className={classes.betaBadge}>
+                                <FiUsers size={14} />
+                                <span>Optional Program</span>
+                            </div>
+                            <h3 className={classes.betaTitle}>Join the Beta Testing Program</h3>
+                            <p className={classes.betaDesc}>
+                                Want early access to experimental rings, astrolabe visualizer upgrades, and upcoming features before they roll out to everyone? Follow these 3 simple steps to join our open Beta track:
+                            </p>
+                        </div>
+
+                        {/* 3-Step Beta Onboarding Flow */}
+                        <div className={classes.stepsGrid}>
+                            {BETA_STEPS.map((s) => (
+                                <div key={s.num} className={classes.stepCard} style={{ '--step-accent': s.accent }}>
+                                    <div className={classes.stepNum} style={{ background: `${s.accent}20`, color: s.accent, borderColor: `${s.accent}40` }}>
+                                        {s.num}
+                                    </div>
+                                    <h4 className={classes.stepTitle}>{s.title}</h4>
+                                    <p className={classes.stepDesc}>{s.desc}</p>
+                                    <a
+                                        href={s.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={classes.stepBtn}
+                                        style={{ '--btn-accent': s.accent }}
+                                    >
+                                        <span>{s.btnText}</span>
+                                        <FiExternalLink size={13} />
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Beta Program Note Banner */}
+                        <div className={classes.noticeBanner}>
+                            <FiInfo className={classes.noticeIcon} />
+                            <div className={classes.noticeContent}>
+                                <strong>Beta Program Note:</strong> Beta builds receive pre-release updates. You can leave the Beta track at any time in the Google Play Store to return to the stable public release.
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Feedback & Community Section */}
                     <div className={classes.feedbackSection} id="feedback">
-                        <h3 className={classes.feedbackTitle}>Feedback, Ideas & Feature Requests</h3>
+                        <h3 className={classes.feedbackTitle}>Feedback, Ideas & Beta Discussions</h3>
                         <p className={classes.feedbackSub}>
-                            Post your feature requests and bug reports in the Google Group forum or send direct emails to the core development team:
+                            Post your feature ideas, ring suggestions, and bug reports in the community forum or contact the development team directly:
                         </p>
 
                         <div className={classes.actionsRow}>

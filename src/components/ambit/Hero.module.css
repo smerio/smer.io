@@ -149,6 +149,26 @@
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.heroTrustNote {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.trustHighlight {
+    color: #F4A261;
+    font-weight: 600;
+}
+
+.trustDivider {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.75rem;
+}
+
 .mockupWrap {
     display: flex;
     justify-content: center;
@@ -297,6 +317,10 @@
     }
 
     .actions {
+        justify-content: center;
+    }
+
+    .heroTrustNote {
         justify-content: center;
     }
 }
