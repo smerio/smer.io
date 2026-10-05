@@ -202,8 +202,12 @@
     display: flex;
     gap: 0.6rem;
     overflow-x: auto;
-    padding: 0.5rem 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0.25rem;
     scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
 }
 
 .thumbBtn {
@@ -266,7 +270,7 @@
 @media (max-width: 900px) {
     .carouselFrame {
         grid-template-columns: 1fr;
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.75rem;
         gap: 2.5rem;
     }
 
@@ -276,5 +280,63 @@
 
     .screenTitle {
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .carouselFrame {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        gap: 1.75rem;
+    }
+
+    .deviceBezel {
+        width: 210px;
+        border-radius: 28px;
+        padding: 8px;
+    }
+
+    .screenGlass {
+        border-radius: 22px;
+    }
+
+    .screenTitle {
+        font-size: 1.4rem;
+        word-break: break-word;
+    }
+
+    .screenDesc {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .highlightBox {
+        padding: 0.75rem 1rem;
+    }
+
+    .highlightText {
+        font-size: 0.85rem;
+    }
+
+    .detailsPane {
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .thumbBtn {
+        width: 44px;
+        height: 78px;
+    }
+
+    .ctaBtn {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
     }
 }
