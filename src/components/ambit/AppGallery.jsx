@@ -112,10 +112,10 @@ const AppGallery = () => {
                         <div className={classes.deviceBezel}>
                             <div className={classes.screenGlass}>
                                 <img
+                                    key={current.id}
                                     src={current.src}
                                     alt={current.title}
                                     className={classes.screenshotImg}
-                                    loading="lazy"
                                 />
                             </div>
                         </div>
