@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from './Hero.module.css';
-import { FiArrowDown, FiShield, FiMail, FiSun, FiMoon, FiUsers, FiDownload } from 'react-icons/fi';
+import { FiArrowDown } from 'react-icons/fi';
 import { FaGooglePlay } from 'react-icons/fa';
 
 const Hero = () => {
@@ -88,12 +88,11 @@ const Hero = () => {
                             <FaGooglePlay aria-hidden="true" />
                             Download on Google Play
                         </a>
-                        <a href="#download" className={`${classes.btn} ${classes.secondary}`}>
-                            <FiDownload aria-hidden="true" />
-                            Install Options
+                        <a href="#screens" className={`${classes.btn} ${classes.secondary}`}>
+                            <FiArrowDown aria-hidden="true" />
+                            View Screenshots
                         </a>
                         <a href="#rings" className={`${classes.btn} ${classes.tertiary}`}>
-                            <FiArrowDown aria-hidden="true" />
                             Explore the Rings
                         </a>
                     </div>

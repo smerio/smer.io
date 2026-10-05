@@ -3,6 +3,7 @@ import Hero from '../components/ambit/Hero';
 import Philosophy from '../components/ambit/Philosophy';
 import RingsArchitecture from '../components/ambit/RingsArchitecture';
 import Features from '../components/ambit/Features';
+import AppGallery from '../components/ambit/AppGallery';
 import Privacy from '../components/ambit/Privacy';
 import Feedback from '../components/ambit/Feedback';
 import Faq from '../components/ambit/Faq';
@@ -32,6 +33,7 @@ const Ambit = () => {
             <Hero />
             <Philosophy />
             <RingsArchitecture />
+            <AppGallery />
             <Features />
             <Privacy />
             <Feedback />

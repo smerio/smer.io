@@ -8,7 +8,7 @@ const faqItems = [
         q: 'How do I download Ambit for Android?',
         a: (
             <p>
-                Ambit is published and available directly on the <a href="https://play.google.com/store/apps/details?id=io.smer.ambit" target="_blank" rel="noreferrer">Google Play Store</a>—no waitlists, Google Groups, or testing program enrollment required! Simply install and start using it immediately. If you would like to test experimental rings and upcoming features before general release, you can also join our optional <a href="#beta">Beta Testing Program</a>.
+                Ambit is published and available directly on the <a href="https://play.google.com/store/apps/details?id=io.smer.ambit" target="_blank" rel="noreferrer">Google Play Store</a>—no waitlists, Google Groups, or testing program enrollment required. Simply install and start using it immediately.
             </p>
         ),
     },

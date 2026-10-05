@@ -8,11 +8,11 @@ const SMERIO_SUBNAV = [
 const AMBIT_SUBNAV = [
     { name: 'Philosophy', path: '#philosophy', anchor: true },
     { name: 'Rings', path: '#rings', anchor: true },
+    { name: 'Screenshots', path: '#screens', anchor: true },
     { name: 'Features', path: '#features', anchor: true },
     { name: 'Download', path: '#download', anchor: true },
     { name: 'Privacy Policy', path: '#privacy', anchor: true },
     { name: 'FAQ', path: '#faq', anchor: true },
-    { name: 'Beta', path: '#beta', anchor: true },
     { name: 'Google Play', path: 'https://play.google.com/store/apps/details?id=io.smer.ambit', external: true, cta: true },
 ];
 

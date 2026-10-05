@@ -15,16 +15,16 @@ const features = [
         desc: 'Engineered with Jetpack Glance for Android home screens. Renders a bitmap of your live solar position on a calm 15-minute cadence without battery drain or ticking numbers.',
     },
     {
-        icon: <FiCompass size={26} />,
-        title: 'Seasonal Compass & Archetypes',
-        tagline: 'Philosophical Milestones',
-        desc: 'Frames your life chapters through archetypal seasons (Foundation, Bloom, Incubation, Harvest). Compare your journey to historical thinkers and artists who bloomed late or embraced fallow years.',
-    },
-    {
         icon: <FiCpu size={26} />,
         title: '100% Local-First & Offline',
         tagline: 'No Accounts Ever',
         desc: 'All astronomical solar positions and lived-year calculations happen strictly on your Android device. No accounts, no telemetry, no tracking servers, and fully operational without internet connectivity.',
+    },
+    {
+        icon: <FiCompass size={26} />,
+        title: 'Zero-Permission Location Mode',
+        tagline: 'Astronomical Precision',
+        desc: 'Calculates exact sunrise, noon, and dusk angles either from on-device GPS coordinates or by choosing your city manually—requiring 0 Android system permissions.',
     },
 ];
 

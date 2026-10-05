@@ -86,50 +86,51 @@ const Feedback = () => {
                         </div>
                     </div>
 
-                    {/* Optional Beta Testing Program */}
-                    <div className={classes.betaSection}>
-                        <div className={classes.betaHeader}>
-                            <div className={classes.betaBadge}>
-                                <FiUsers size={14} />
-                                <span>Optional Program</span>
-                            </div>
-                            <h3 className={classes.betaTitle}>Join the Beta Testing Program</h3>
+                    {/* De-emphasized Collapsed Beta Channel Footnote */}
+                    <details className={classes.betaDetails}>
+                        <summary className={classes.betaSummary}>
+                            <span className={classes.betaSummaryText}>
+                                <FiUsers size={16} />
+                                <strong>Interested in upcoming experimental builds?</strong> Join the optional Beta channel
+                            </span>
+                            <span className={classes.betaToggleLabel}>Details ▾</span>
+                        </summary>
+
+                        <div className={classes.betaDropdownContent}>
                             <p className={classes.betaDesc}>
-                                Want early access to experimental rings, astrolabe visualizer upgrades, and upcoming features before they roll out to everyone? Follow these 3 simple steps to join our open Beta track:
+                                We test experimental astronomical dials, new widgets, and astrolabe performance updates with early testers before rolling them out to the public Google Play release.
                             </p>
-                        </div>
 
-                        {/* 3-Step Beta Onboarding Flow */}
-                        <div className={classes.stepsGrid}>
-                            {BETA_STEPS.map((s) => (
-                                <div key={s.num} className={classes.stepCard} style={{ '--step-accent': s.accent }}>
-                                    <div className={classes.stepNum} style={{ background: `${s.accent}20`, color: s.accent, borderColor: `${s.accent}40` }}>
-                                        {s.num}
+                            <div className={classes.stepsGrid}>
+                                {BETA_STEPS.map((s) => (
+                                    <div key={s.num} className={classes.stepCard} style={{ '--step-accent': s.accent }}>
+                                        <div className={classes.stepNum} style={{ background: `${s.accent}20`, color: s.accent, borderColor: `${s.accent}40` }}>
+                                            {s.num}
+                                        </div>
+                                        <h4 className={classes.stepTitle}>{s.title}</h4>
+                                        <p className={classes.stepDesc}>{s.desc}</p>
+                                        <a
+                                            href={s.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={classes.stepBtn}
+                                            style={{ '--btn-accent': s.accent }}
+                                        >
+                                            <span>{s.btnText}</span>
+                                            <FiExternalLink size={13} />
+                                        </a>
                                     </div>
-                                    <h4 className={classes.stepTitle}>{s.title}</h4>
-                                    <p className={classes.stepDesc}>{s.desc}</p>
-                                    <a
-                                        href={s.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={classes.stepBtn}
-                                        style={{ '--btn-accent': s.accent }}
-                                    >
-                                        <span>{s.btnText}</span>
-                                        <FiExternalLink size={13} />
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
+                                ))}
+                            </div>
 
-                        {/* Beta Program Note Banner */}
-                        <div className={classes.noticeBanner}>
-                            <FiInfo className={classes.noticeIcon} />
-                            <div className={classes.noticeContent}>
-                                <strong>Beta Program Note:</strong> Beta builds receive pre-release updates. You can leave the Beta track at any time in the Google Play Store to return to the stable public release.
+                            <div className={classes.noticeBanner}>
+                                <FiInfo className={classes.noticeIcon} />
+                                <div className={classes.noticeContent}>
+                                    <strong>Beta Program Note:</strong> Beta builds are pre-release. You can leave the Beta program anytime directly in Google Play to switch back to the stable release.
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </details>
 
                     {/* Feedback & Community Section */}
                     <div className={classes.feedbackSection} id="feedback">
