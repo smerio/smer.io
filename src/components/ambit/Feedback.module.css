@@ -2,6 +2,14 @@
     padding: 6rem 2rem;
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.anchorTarget {
+    position: absolute;
+    top: -75px;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .container {
@@ -57,7 +65,194 @@
     line-height: 1.65;
     color: #A3A3A3;
     max-width: 780px;
-    margin: 0 0 2.8rem 0;
+    margin: 0 0 2.5rem 0;
+}
+
+/* Direct Public Download Card (No Testing Required) */
+.directCard {
+    background: linear-gradient(135deg, rgba(244, 162, 97, 0.15) 0%, rgba(217, 119, 54, 0.07) 100%);
+    border: 1px solid rgba(244, 162, 97, 0.5);
+    border-radius: 22px;
+    padding: 2.2rem 2.4rem;
+    margin-bottom: 3.2rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 30px rgba(244, 162, 97, 0.08);
+}
+
+.directHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(244, 162, 97, 0.2);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.directBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #F4A261;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.badgeIcon {
+    font-size: 1rem;
+}
+
+.freeLabel {
+    color: #34D399;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+.directBody {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.directTitle {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #F5F5F4;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: -0.01em;
+}
+
+.directDesc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #D4D4D4;
+    margin: 0 0 1.25rem 0;
+    max-width: 620px;
+}
+
+.perksList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+}
+
+.perkItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #E0DACE;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.perkIcon {
+    color: #F4A261;
+    font-size: 0.85rem;
+}
+
+.directAction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.installBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, #F4A261 0%, #D97736 100%);
+    color: #14100A;
+    padding: 0.95rem 1.75rem;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 6px 22px rgba(244, 162, 97, 0.4);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.installBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(244, 162, 97, 0.6);
+    background: linear-gradient(135deg, #F8B47C 0%, #F4A261 100%);
+}
+
+.btnTextWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.btnSub {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+}
+
+.btnMain {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.actionHint {
+    font-size: 0.75rem;
+    color: #8A8A8A;
+    letter-spacing: 0.02em;
+}
+
+/* Optional Beta Section */
+.betaSection {
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 2rem;
+}
+
+.betaHeader {
+    margin-bottom: 1.75rem;
+}
+
+.betaBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #A3A3A3;
+    margin-bottom: 0.6rem;
+}
+
+.betaTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #F5F5F4;
+    margin: 0 0 0.5rem 0;
+}
+
+.betaDesc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #8A8A8A;
+    margin: 0;
+    max-width: 740px;
 }
 
 /* 3-Step Testing Grid */
@@ -288,9 +483,29 @@
     }
 }
 
+@media (max-width: 800px) {
+    .directBody {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+    .directAction {
+        width: 100%;
+        align-items: stretch;
+    }
+    .installBtn {
+        justify-content: center;
+    }
+    .actionHint {
+        text-align: center;
+    }
+}
+
 @media (max-width: 640px) {
     .card {
         padding: 2rem 1.5rem;
+    }
+    .directCard {
+        padding: 1.5rem 1.25rem;
     }
     .title {
         font-size: 2rem;
