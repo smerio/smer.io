@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import classes from './TelegramBotChat.module.css';
 
 const TelegramBotChat = () => {
     const [scenario, setScenario] = useState('text'); // 'text' or 'ocr'
     const [step, setStep] = useState('confirm'); // 'confirm', 'logging', 'logged', 'cancelled'
 
-    // Reset step when scenario changes
-    useEffect(() => {
+    const switchScenario = (newScenario) => {
+        setScenario(newScenario);
         setStep('confirm');
-    }, [scenario]);
+    };
 
     const handleAction = (action) => {
         setStep('logging');
@@ -23,13 +23,13 @@ const TelegramBotChat = () => {
             <div className={classes.tabs}>
                 <button 
                     className={`${classes.tab} ${scenario === 'text' ? classes.tabActive : ''}`}
-                    onClick={() => setScenario('text')}
+                    onClick={() => switchScenario('text')}
                 >
                     Text Command
                 </button>
                 <button 
                     className={`${classes.tab} ${scenario === 'ocr' ? classes.tabActive : ''}`}
-                    onClick={() => setScenario('ocr')}
+                    onClick={() => switchScenario('ocr')}
                 >
                     Receipt Photo OCR
                 </button>
