@@ -176,6 +176,8 @@
     border-radius: 16px;
     padding: 1.25rem 1.5rem;
     margin-top: 1.2rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contactIcon {
@@ -184,11 +186,20 @@
     flex-shrink: 0;
 }
 
+.contactEmail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.6rem;
+    word-break: break-all;
+}
+
 .contactEmail a {
     color: #34D399;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
+    display: inline-block;
 }
 
 .contactEmail a:hover {
@@ -196,14 +207,14 @@
 }
 
 .contactDivider {
-    margin: 0 0.6rem;
     color: #555555;
 }
 
 .contactSub {
     font-size: 0.8rem;
     color: #8A8A8A;
-    margin-top: 0.2rem;
+    margin-top: 0.35rem;
+    line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -215,5 +226,16 @@
     }
     .title {
         font-size: 2.1rem;
+    }
+    .contactBox {
+        padding: 1.2rem 1rem;
+    }
+    .contactDivider {
+        display: none;
+    }
+    .contactEmail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
     }
 }
