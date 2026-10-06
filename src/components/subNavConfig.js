@@ -22,9 +22,10 @@ const NOMOS_SUBNAV = [
     { name: 'Momentum', path: '#momentum', anchor: true },
     { name: 'Causal Engine', path: '#causal-discovery', anchor: true },
     { name: 'Screens', path: '#gallery', anchor: true },
+    { name: 'Download', path: '#download', anchor: true },
     { name: 'Privacy Policy', path: '#privacy', anchor: true },
     { name: 'FAQ', path: '#faq', anchor: true },
-    { name: 'Closed Beta', path: '#testing', anchor: true, cta: true },
+    { name: 'Google Play', path: 'https://play.google.com/store/apps/details?id=io.smer.nomos', external: true, cta: true },
 ];
 
 export const getSubNavItems = (pathname) => {
