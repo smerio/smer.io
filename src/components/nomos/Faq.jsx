@@ -30,8 +30,8 @@ const FAQS = [
     },
     {
         id: 'faq-testing',
-        q: 'How do I join the Google Play Closed Testing program?',
-        a: 'Google requires testers to join an authorized group before Google Play allows installation. First, join our Google Group at groups.google.com/g/smerio-nomos with your Android Google account. Next, visit play.google.com/apps/testing/io.smer.nomos and click "Become a tester". Finally, download and install the app from Google Play. Please stay enrolled for at least 14 days to help us reach the open production release milestone!',
+        q: 'How do I download Smerio Nomos on Android?',
+        a: 'You can download Smerio Nomos directly from the Google Play Store with a single tap. Simply search for "Smerio Nomos" or visit play.google.com/store/apps/details?id=io.smer.nomos. No waitlists, accounts, or complex onboarding required.',
     },
     {
         id: 'faq-android',

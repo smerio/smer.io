@@ -2,6 +2,14 @@
     padding: 6rem 2rem;
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.anchorTarget {
+    position: absolute;
+    top: -75px;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .container {
@@ -57,78 +65,225 @@
     line-height: 1.65;
     color: #A3A3A3;
     max-width: 780px;
-    margin: 0 0 2.8rem 0;
+    margin: 0 0 2.5rem 0;
 }
 
-/* 3-Step Testing Grid */
-.stepsGrid {
+/* Direct Public Download Card (Single-Click Google Play CTA) */
+.directCard {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.07) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    border-radius: 22px;
+    padding: 2.2rem 2.4rem;
+    margin-bottom: 3.2rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 30px rgba(16, 185, 129, 0.08);
+}
+
+.directHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.directBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #34D399;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.badgeIcon {
+    font-size: 1rem;
+}
+
+.freeLabel {
+    color: #22D3EE;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+.directBody {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
 }
 
-.stepCard {
-    background: #141414;
-    border: 1px solid #282828;
-    border-radius: 20px;
-    padding: 1.8rem;
+.directTitle {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #F5F5F4;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: -0.01em;
+}
+
+.directDesc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #D4D4D4;
+    margin: 0 0 1.25rem 0;
+    max-width: 620px;
+}
+
+.perksList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+}
+
+.perkItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #E0E7E3;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.perkIcon {
+    color: #34D399;
+    font-size: 0.85rem;
+}
+
+.directAction {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.installBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #04160F;
+    padding: 0.95rem 1.75rem;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 6px 22px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.installBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+}
+
+.btnTextWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.btnSub {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+}
+
+.btnMain {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.actionHint {
+    font-size: 0.75rem;
+    color: #8A8A8A;
+    letter-spacing: 0.02em;
+}
+
+/* Optional Collapsed Beta Footnote */
+.betaDetails {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 2.5rem;
     transition: all 0.2s ease;
 }
 
-.stepCard:hover {
-    border-color: var(--step-accent);
-    transform: translateY(-2px);
+.betaDetails[open] {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(16, 185, 129, 0.3);
 }
 
-.stepNum {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    border: 1px solid;
-    display: grid;
-    place-items: center;
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
+.betaSummary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
 }
 
-.stepTitle {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #F5F5F4;
-    margin: 0 0 0.5rem 0;
+.betaSummary::-webkit-details-marker {
+    display: none;
 }
 
-.stepDesc {
-    font-size: 0.88rem;
-    line-height: 1.55;
+.betaSummaryText {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #D1D5DB;
+}
+
+.betaSummaryText strong {
+    color: #34D399;
+}
+
+.betaToggleLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #9CA3AF;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+.betaDetails[open] .betaToggleLabel {
+    color: #34D399;
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.betaDropdownContent {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 1rem;
+}
+
+.betaDesc {
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #8A8A8A;
     margin: 0 0 1.5rem 0;
-    flex-grow: 1;
-}
-
-.stepBtn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--btn-accent);
-    color: #04160F;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.65rem 1rem;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.15s ease;
-}
-
-.stepBtn:hover {
-    filter: brightness(1.15);
-    transform: scale(1.02);
+    max-width: 740px;
 }
 
 /* Notice Banner */
@@ -288,12 +443,52 @@
     }
 }
 
+@media (max-width: 800px) {
+    .directBody {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+    .directAction {
+        width: 100%;
+        align-items: stretch;
+    }
+    .installBtn {
+        justify-content: center;
+    }
+    .actionHint {
+        text-align: center;
+    }
+}
+
 @media (max-width: 640px) {
+    .section {
+        padding: 4rem 1rem;
+    }
     .card {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.25rem;
+    }
+    .directCard {
+        padding: 1.5rem 1.25rem;
     }
     .title {
         font-size: 2rem;
+    }
+    .betaDetails {
+        padding: 1rem 1.25rem;
+    }
+    .betaSummary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .betaSummaryText {
+        font-size: 0.88rem;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        line-height: 1.4;
+    }
+    .betaToggleLabel {
+        align-self: flex-start;
     }
     .actionsRow {
         flex-direction: column;
