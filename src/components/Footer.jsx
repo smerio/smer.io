@@ -15,7 +15,7 @@ const Footer = () => {
                     <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer">GitHub</a>
                     <a href="https://github.com/smerio/smerio/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
                 </div>
-                &copy; {new Date().getFullYear()} Smerio. Open Source Wealth Tracker.
+                &copy; {new Date().getFullYear()} Smerio.
             </div>
         </footer>
     );
