@@ -21,6 +21,7 @@ const NOMOS_SUBNAV = [
     { name: '1-Tap Log', path: '#fast-log', anchor: true },
     { name: 'Momentum', path: '#momentum', anchor: true },
     { name: 'Causal Engine', path: '#causal-discovery', anchor: true },
+    { name: 'Discoveries Guide', path: '/nomos/discoveries' },
     { name: 'Screens', path: '#gallery', anchor: true },
     { name: 'Download', path: '#download', anchor: true },
     { name: 'Privacy Policy', path: '#privacy', anchor: true },
@@ -28,9 +29,21 @@ const NOMOS_SUBNAV = [
     { name: 'Google Play', path: 'https://play.google.com/store/apps/details?id=io.smer.nomos', external: true, cta: true },
 ];
 
+const NOMOS_DISCOVERIES_SUBNAV = [
+    { name: '← Nomos App', path: '/nomos' },
+    { name: 'How It Works', path: '#how-it-works', anchor: true },
+    { name: 'Reading a Card', path: '#reading-a-card', anchor: true },
+    { name: 'Card Types', path: '#time-lagged-trigger', anchor: true },
+    { name: 'Personal Trials', path: '#personal-trials', anchor: true },
+    { name: 'Trial Verdicts', path: '#trial-verdicts', anchor: true },
+    { name: 'FAQ', path: '#faq', anchor: true },
+    { name: 'Google Play', path: 'https://play.google.com/store/apps/details?id=io.smer.nomos', external: true, cta: true },
+];
+
 export const getSubNavItems = (pathname) => {
     if (pathname === '/' || pathname.startsWith('/docs') || pathname.startsWith('/features')) return SMERIO_SUBNAV;
     if (pathname === '/ambit' || pathname.startsWith('/ambit') || pathname === '/privacy') return AMBIT_SUBNAV;
+    if (pathname === '/nomos/discoveries' || pathname.startsWith('/nomos/discoveries')) return NOMOS_DISCOVERIES_SUBNAV;
     if (pathname === '/nomos' || pathname.startsWith('/nomos')) return NOMOS_SUBNAV;
     return [];
 };
