@@ -9,24 +9,30 @@ import Nomos from './pages/Nomos';
 import NomosDiscoveries from './pages/NomosDiscoveries';
 import NotFound from './pages/NotFound';
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="docs" element={<Docs />} />
+        <Route path="ledgent" element={<Ledgent />} />
+        <Route path="ambit" element={<Ambit />} />
+        <Route path="privacy" element={<Ambit />} />
+        <Route path="nomos" element={<Nomos />} />
+        <Route path="nomos/privacy" element={<Nomos />} />
+        <Route path="nomos/discoveries" element={<NomosDiscoveries />} />
+        <Route path="features/telegram-bot" element={<TelegramBot />} />
+        <Route path="integrations/telegram" element={<TelegramBot />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="docs" element={<Docs />} />
-          <Route path="ledgent" element={<Ledgent />} />
-          <Route path="ambit" element={<Ambit />} />
-          <Route path="privacy" element={<Ambit />} />
-          <Route path="nomos" element={<Nomos />} />
-          <Route path="nomos/privacy" element={<Nomos />} />
-          <Route path="nomos/discoveries" element={<NomosDiscoveries />} />
-          <Route path="features/telegram-bot" element={<TelegramBot />} />
-          <Route path="integrations/telegram" element={<TelegramBot />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   );
 }
