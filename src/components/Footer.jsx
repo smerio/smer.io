@@ -10,6 +10,7 @@ const Footer = () => {
                     <Link to="/ambit">Ambit (Android)</Link>
                     <Link to="/ledgent">Ledgent</Link>
                     <Link to="/nomos#privacy">Nomos Privacy</Link>
+                    <Link to="/nomos/discoveries">Nomos Discoveries</Link>
                     <Link to="/ambit#privacy">Ambit Privacy</Link>
                     <Link to="/docs">Documentation</Link>
                     <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer">GitHub</a>
