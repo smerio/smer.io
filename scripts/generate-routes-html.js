@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distDir = path.resolve(__dirname, '..', 'dist');
+const ssrDistDir = path.resolve(__dirname, '..', 'dist-ssr');
 
 // Route metadata configuration for smer.io multi-product hub
 export const routesMeta = [
@@ -12,6 +13,7 @@ export const routesMeta = [
     path: 'ambit',
     title: 'Ambit — The Circuit of a Life | Cyclical Time Tracker for Android',
     description: "Replace linear countdown anxiety with Seneca's concentric rings of time. 100% on-device astronomical clock, natural seasons, and evening reflections.",
+    keywords: 'Ambit, cyclical time tracker, Seneca concentric rings, astronomical clock, Android time tracker, local-first, privacy-first time tracking, zero trackers',
     canonical: 'https://smer.io/ambit',
     ogTitle: 'Ambit — The Circuit of a Life (Android)',
     ogDescription: "Replace linear countdown anxiety with Seneca's concentric rings of time. 100% on-device astronomical clock, natural seasons, and evening reflections.",
@@ -25,6 +27,7 @@ export const routesMeta = [
     path: 'privacy',
     title: 'Ambit — Privacy Policy | Zero Trackers, 100% On-Device',
     description: 'Privacy Policy for Ambit Android app. Zero trackers, no accounts, strictly on-device astronomical calculations, and zero third-party network transmission.',
+    keywords: 'Ambit privacy policy, zero trackers, 100% on-device astronomical clock, Android privacy, local data sovereignty',
     canonical: 'https://smer.io/privacy',
     ogTitle: 'Ambit — Privacy Policy (Android)',
     ogDescription: 'Privacy Policy for Ambit. 100% on-device astronomical calculations, zero trackers, and complete data sovereignty.',
@@ -38,6 +41,7 @@ export const routesMeta = [
     path: 'nomos',
     title: 'Smerio Nomos — Privacy-First Modular Life & Habit Tracker for Android',
     description: '100% offline habit logging with Pixela heatmaps, N-of-1 statistical discovery, and 0 network permissions.',
+    keywords: 'Smerio Nomos, habit tracker, Android habit tracker, privacy-first, 1-tap fast logging, Pixela contribution heatmaps, on-device causal discovery, N-of-1 personal trials, AES-256 encryption, zero network permissions',
     canonical: 'https://smer.io/nomos',
     ogTitle: 'Smerio Nomos — Privacy-First Modular Life & Habit Tracker for Android',
     ogDescription: '100% offline habit logging with Pixela heatmaps, N-of-1 statistical discovery, and 0 network permissions.',
@@ -51,6 +55,7 @@ export const routesMeta = [
     path: 'nomos/privacy',
     title: 'Smerio Nomos — Privacy Policy | Zero Trackers, 0 Internet Permissions',
     description: 'Privacy Policy for Smerio Nomos Android app. Zero network permissions requested, zero trackers, and hardware-backed AES-256-GCM local encryption.',
+    keywords: 'Smerio Nomos privacy policy, zero network permissions, zero trackers, 100% on-device habit logging, AES-256 local encryption, Google Play privacy policy',
     canonical: 'https://smer.io/nomos/privacy',
     ogTitle: 'Smerio Nomos — Privacy Policy (Android)',
     ogDescription: '0 internet permissions requested, zero trackers, and hardware-backed AES-256-GCM encryption on Android.',
@@ -64,11 +69,12 @@ export const routesMeta = [
     path: 'nomos/discoveries',
     title: 'How Discoveries work — Smerio Nomos',
     description: 'Learn how Smerio Nomos detects on-device habit patterns, calculates lift and odds ratios, and guides N-of-1 personal trials.',
-    canonical: 'https://smer.io/nomos/discoveries',
+    keywords: 'Nomos, Smerio Nomos, habit discoveries, causal discovery, N-of-1 personal trial, habit patterns, lift, odds ratio, Benjamini-Hochberg, symptom tracker, offline habit tracking, Android privacy, local-first statistics',
+    canonical: 'https://smer.io/nomos/discoveries/',
     ogTitle: 'How Discoveries work — Smerio Nomos',
     ogDescription: 'Learn how Smerio Nomos detects on-device habit patterns, calculates lift and odds ratios, and guides N-of-1 personal trials.',
     ogImage: 'https://smer.io/nomos/feature-graphic-B.png',
-    ogUrl: 'https://smer.io/nomos/discoveries',
+    ogUrl: 'https://smer.io/nomos/discoveries/',
     twitterTitle: 'How Discoveries work — Smerio Nomos',
     twitterDescription: 'Learn how Smerio Nomos detects on-device habit patterns, calculates lift and odds ratios, and guides N-of-1 personal trials.',
     twitterImage: 'https://smer.io/nomos/feature-graphic-B.png',
@@ -77,6 +83,7 @@ export const routesMeta = [
     path: 'ledgent',
     title: 'Ledgent — Crypto Ledger Bot for Telegram | Smerio',
     description: 'Self-hosted Telegram crypto ledger and AI advisor bot. Automated transaction tracking, FIFO/LIFO tax lots, portfolio analytics, and complete data ownership.',
+    keywords: 'Ledgent, Telegram crypto ledger bot, cryptocurrency portfolio tracker, FIFO LIFO tax lots, self-hosted, private AI advisor',
     canonical: 'https://smer.io/ledgent',
     ogTitle: 'Ledgent — Self-Hosted Crypto Ledger & Advisor Bot',
     ogDescription: 'Self-hosted Telegram bot for crypto portfolio tracking, FIFO/LIFO tax lots, and private AI advisory. 100% data ownership.',
@@ -90,6 +97,7 @@ export const routesMeta = [
     path: 'features/telegram-bot',
     title: 'Telegram Bot Integration - Stateless Personal Budget Tracking | Smerio',
     description: 'Log expenses and receipts instantly with the Smerio Telegram Bot. Paste free-format text or upload photos of bills for secure, stateless, and real-time AI budget tracking.',
+    keywords: 'Smerio Telegram Bot, budget bot, expense tracker bot, receipt OCR, stateless budget, serverless personal finance, AWS Lambda',
     canonical: 'https://smer.io/features/telegram-bot',
     ogTitle: 'Smerio Telegram Bot — Instant Budget Tracking',
     ogDescription: 'Log expenses and receipts instantly with the Smerio Telegram Bot. Natural chat parsing, receipt OCR, and stateless zero-database serverless architecture.',
@@ -103,6 +111,7 @@ export const routesMeta = [
     path: 'integrations/telegram',
     title: 'Telegram Bot Integration - Stateless Personal Budget Tracking | Smerio',
     description: 'Log expenses and receipts instantly with the Smerio Telegram Bot. Paste free-format text or upload photos of bills for secure, stateless, and real-time AI budget tracking.',
+    keywords: 'Smerio Telegram Bot, budget bot, expense tracker bot, receipt OCR, stateless budget, serverless personal finance, AWS Lambda',
     canonical: 'https://smer.io/integrations/telegram',
     ogTitle: 'Smerio Telegram Bot — Instant Budget Tracking',
     ogDescription: 'Log expenses and receipts instantly with the Smerio Telegram Bot. Natural chat parsing, receipt OCR, and stateless zero-database serverless architecture.',
@@ -116,6 +125,7 @@ export const routesMeta = [
     path: 'docs',
     title: 'Documentation | Smerio Self-Hosted Wealth Tracker',
     description: 'Complete setup guide and reference for Smerio. Installation via Docker/PocketBase, wealth management, asset tracking, and envelope budgeting.',
+    keywords: 'Smerio documentation, self-hosted personal finance, Docker deployment, PocketBase, net worth tracker, envelope budgeting',
     canonical: 'https://smer.io/docs',
     ogTitle: 'Smerio Documentation — Private Wealth Tracking',
     ogDescription: 'Learn how to deploy and configure Smerio on your own hardware. Full guide to Docker installation and budgeting.',
@@ -127,7 +137,7 @@ export const routesMeta = [
   },
 ];
 
-export function generateRouteHtml(templateHtml, meta) {
+export function generateRouteHtml(templateHtml, meta, preRenderedBody = '') {
   let html = templateHtml;
 
   // Replace <title>
@@ -138,6 +148,14 @@ export function generateRouteHtml(templateHtml, meta) {
     /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i,
     `<meta name="description" content="${meta.description}">`
   );
+
+  // Replace <meta name="keywords" content="..." /> with product-specific keywords
+  if (meta.keywords) {
+    html = html.replace(
+      /<meta\s+name="keywords"\s+content="[^"]*"\s*\/?>/i,
+      `<meta name="keywords" content="${meta.keywords}">`
+    );
+  }
 
   // Replace canonical link
   html = html.replace(
@@ -181,10 +199,15 @@ export function generateRouteHtml(templateHtml, meta) {
     `<meta property="twitter:image" content="${meta.twitterImage}">`
   );
 
+  // Inject pre-rendered static HTML into <div id="root"></div> so page is never blank without JS
+  if (preRenderedBody) {
+    html = html.replace('<div id="root"></div>', `<div id="root">${preRenderedBody}</div>`);
+  }
+
   return html;
 }
 
-export function generateAllRouteHtmls() {
+export async function generateAllRouteHtmls() {
   const rootIndexHtmlPath = path.join(distDir, 'index.html');
   if (!fs.existsSync(rootIndexHtmlPath)) {
     console.error(`Root dist/index.html not found at ${rootIndexHtmlPath}. Run 'vite build' first.`);
@@ -193,6 +216,33 @@ export function generateAllRouteHtmls() {
 
   const templateHtml = fs.readFileSync(rootIndexHtmlPath, 'utf8');
 
+  // Load SSR module if available
+  let ssrRender = null;
+  const ssrBundlePath = path.join(ssrDistDir, 'entry-server.js');
+  if (fs.existsSync(ssrBundlePath)) {
+    try {
+      const ssrModule = await import(ssrBundlePath);
+      ssrRender = ssrModule.render;
+      console.log('✓ Loaded SSR bundle for static HTML pre-rendering.');
+    } catch (err) {
+      console.warn('Warning: Could not load SSR bundle for pre-rendering:', err.message);
+    }
+  }
+
+  // Pre-render root home page into dist/index.html
+  if (ssrRender) {
+    try {
+      const rootBody = ssrRender('/');
+      if (rootBody) {
+        const rootHtml = templateHtml.replace('<div id="root"></div>', `<div id="root">${rootBody}</div>`);
+        fs.writeFileSync(rootIndexHtmlPath, rootHtml, 'utf8');
+        console.log('✓ Injected pre-rendered HTML into root dist/index.html');
+      }
+    } catch (err) {
+      console.warn('Warning: Could not pre-render root /:', err.message);
+    }
+  }
+
   console.log(`Generating dedicated HTML entrypoints for ${routesMeta.length} routes...`);
 
   for (const meta of routesMeta) {
@@ -200,10 +250,20 @@ export function generateAllRouteHtmls() {
     fs.mkdirSync(targetDir, { recursive: true });
 
     const targetFile = path.join(targetDir, 'index.html');
-    const customizedHtml = generateRouteHtml(templateHtml, meta);
+    
+    let renderedBody = '';
+    if (ssrRender) {
+      try {
+        renderedBody = ssrRender('/' + meta.path);
+      } catch (err) {
+        console.warn(`Warning: Could not pre-render /${meta.path}:`, err.message);
+      }
+    }
+
+    const customizedHtml = generateRouteHtml(templateHtml, meta, renderedBody);
     fs.writeFileSync(targetFile, customizedHtml, 'utf8');
 
-    console.log(`✓ Generated ${path.relative(distDir, targetFile)} [og:title: "${meta.ogTitle}"]`);
+    console.log(`✓ Generated ${path.relative(distDir, targetFile)} [pre-rendered: ${renderedBody ? `${renderedBody.length} chars` : 'none'}, og:title: "${meta.ogTitle}"]`);
   }
 
   console.log('Successfully generated all route entrypoints.');
@@ -211,5 +271,5 @@ export function generateAllRouteHtmls() {
 
 // Execute if run directly from CLI
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  generateAllRouteHtmls();
+  await generateAllRouteHtmls();
 }

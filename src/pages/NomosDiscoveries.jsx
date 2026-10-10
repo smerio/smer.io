@@ -347,7 +347,7 @@ const NomosDiscoveries = () => {
                     <section id="trial-verdicts" className={classes.section}>
                         <h2 className={classes.sectionTitle}>What trial results mean</h2>
                         <p className={classes.paragraph}>
-                            Once you finalize a trial, Nomos evaluates the event rates across both phases and presents one of six standardized verdicts:
+                            During a trial, Nomos tracks your progress, and once finalized, evaluates event rates across both phases to determine your verdict:
                         </p>
 
                         <div className={classes.tableWrapper}>
