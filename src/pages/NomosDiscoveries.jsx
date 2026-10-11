@@ -281,7 +281,7 @@ const NomosDiscoveries = () => {
                             </p>
                             <ul className={classes.featureList}>
                                 <li>
-                                    <strong>Target goal driver:</strong> an attribute that makes your tracker's target (the attribute marked "Treat as a target goal") significantly more likely, shown with lift and odds ratio.
+                                    <strong>Target goal driver:</strong> an attribute that makes your tracker's <em>target</em> (the attribute with "Track as an outcome" turned on) more likely, with lift and odds ratio.
                                 </li>
                                 <li>
                                     <strong>Major driver / Rating impact:</strong> a yes/no attribute that shifts a 1–5 rating, such as mood or sleep quality. <em>Major driver</em> means the average rating moves by 1.0 point or more; <em>rating impact</em> indicates a smaller but statistically reliable shift (at least 0.4 points). Nomos validates this using Student's t-test (<span className={classes.mono}>p ≤ 0.08</span>, plus the Benjamini–Hochberg false discovery correction).
@@ -419,7 +419,7 @@ const NomosDiscoveries = () => {
                             <li><strong>Log symptoms when they happen and when they don't:</strong> Statistical patterns rely on contrast between active and inactive days.</li>
                             <li><strong>Name symptom trackers clearly:</strong> Use descriptive names (such as "Headache", not "H") so the engine can identify symptoms and avoid showing them as causes.</li>
                             <li><strong>Track baseline lifestyle anchors:</strong> Add a <em>Sleep</em>, <em>Alcohol</em>, or <em>Stress</em> tracker; Nomos uses these to catch and warn about mediated confounders.</li>
-                            <li><strong>Mark target goals:</strong> Set key attributes as "Treat as a target goal" to unlock Target Goal Driver insights.</li>
+                            <li>Turn on <strong>Track as an outcome</strong> for the attribute you care about to get <em>Target goal driver</em> cards. (This is separate from a tracker's plan / goal, which sets a number to reach.)</li>
                             <li><strong>Use Hide from Insights:</strong> If a tracker only introduces noise, hide it from Insights to remove it from discovery baselines.</li>
                         </ul>
                     </section>
@@ -487,6 +487,16 @@ const NomosDiscoveries = () => {
                             </summary>
                             <div className={classes.faqAnswer}>
                                 Personal trials require two separate trackers with an asymmetric, directional relationship. Routine stacks, symptom co-occurrences, confounded patterns, and single-tracker attribute drivers do not qualify for trial testing.
+                            </div>
+                        </details>
+
+                        <details className={classes.faqItem}>
+                            <summary className={classes.faqSummary}>
+                                <span>What's the difference between "Track as an outcome" and a goal?</span>
+                                <FiChevronDown />
+                            </summary>
+                            <div className={classes.faqAnswer}>
+                                <em>Track as an outcome</em> tells Discoveries which value you care about (for example your mood rating), so it looks for what lifts it. A <strong>goal</strong> (the tracker's plan) is a number you aim for, such as "Sleep: at least 7 hours a day" or "Mood: at least 4 on average per week". Goals don't change which discoveries you see.
                             </div>
                         </details>
 
