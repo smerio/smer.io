@@ -40,10 +40,20 @@ const NOMOS_DISCOVERIES_SUBNAV = [
     { name: 'Google Play', path: 'https://play.google.com/store/apps/details?id=io.smer.nomos', external: true, cta: true },
 ];
 
+const HOME_SUBNAV = [
+    { name: 'Apps', path: '#apps', anchor: true },
+    { name: 'Principles', path: '#principles', anchor: true },
+    { name: 'Nomos', path: '/nomos' },
+    { name: 'Ambit', path: '/ambit' },
+    { name: 'Docs', path: '/docs' },
+    { name: 'GitHub', path: 'https://github.com/smerio/smerio', external: true },
+];
+
 export const getSubNavItems = (pathname) => {
-    if (pathname === '/' || pathname.startsWith('/docs') || pathname.startsWith('/features')) return SMERIO_SUBNAV;
-    if (pathname === '/ambit' || pathname.startsWith('/ambit') || pathname === '/privacy') return AMBIT_SUBNAV;
+    if (pathname === '/') return HOME_SUBNAV;
+    if (pathname.startsWith('/docs') || pathname.startsWith('/features')) return SMERIO_SUBNAV;
     if (pathname === '/nomos/discoveries' || pathname.startsWith('/nomos/discoveries')) return NOMOS_DISCOVERIES_SUBNAV;
+    if (pathname === '/ambit' || pathname.startsWith('/ambit') || pathname === '/privacy') return AMBIT_SUBNAV;
     if (pathname === '/nomos' || pathname.startsWith('/nomos')) return NOMOS_SUBNAV;
     return [];
 };
