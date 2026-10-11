@@ -1,0 +1,188 @@
+.hero {
+    min-height: calc(85vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(8, 217, 214, 0.06) 0%, rgba(18, 18, 18, 0) 70%);
+    box-sizing: border-box;
+}
+
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.pillBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(8, 217, 214, 0.1);
+    border: 1px solid rgba(8, 217, 214, 0.28);
+    color: #08D9D6;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+    color: #F5F5F4;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #08D9D6 0%, #34D399 50%, #F4A261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.65;
+    color: #A3A3A3;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+
+.btnPrimary {
+    background: #08D9D6;
+    color: #121212;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px rgba(8, 217, 214, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btnPrimary:hover {
+    background: #22E4E1;
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(8, 217, 214, 0.45);
+}
+
+.btnSecondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #F5F5F4;
+    border: 1px solid #333333;
+    padding: 0.85rem 1.85rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btnSecondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #555555;
+    transform: translateY(-2px);
+}
+
+/* Trust telemetry bar */
+.trustBar {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+    color: #888888;
+    font-weight: 500;
+}
+
+.trustIcon {
+    color: #34D399;
+    font-size: 1.15rem;
+}
+
+.glowEffect {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(8, 217, 214, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (prefers-color-scheme: light) {
+    .hero {
+        background: radial-gradient(circle at 50% 30%, rgba(8, 217, 214, 0.12) 0%, rgba(248, 249, 250, 0) 70%);
+    }
+    .title {
+        color: #111827;
+    }
+    .subtitle {
+        color: #4B5563;
+    }
+    .btnSecondary {
+        background: #FFFFFF;
+        color: #111827;
+        border-color: #E5E7EB;
+    }
+    .btnSecondary:hover {
+        background: #F9FAFB;
+    }
+    .trustBar {
+        border-top-color: #E5E7EB;
+    }
+    .trustItem {
+        color: #6B7280;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 3.5rem 1rem 2.5rem;
+    }
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btnPrimary, .btnSecondary {
+        justify-content: center;
+    }
+    .trustBar {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
