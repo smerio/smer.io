@@ -13,7 +13,7 @@ const Privacy = () => {
                     <h2 className={classes.title}>Privacy Policy</h2>
                     <p className={classes.effectiveDate}>Last updated: 15 October 2026</p>
                     <p className={classes.lead}>
-                        Smerio Nomos is engineered from the ground up as a <strong>100% local-first, zero-telemetry habit and life tracking application</strong>. 
+                        Smerio Nomos is engineered from the ground up as a <strong>100% local-first, zero-telemetry mood and habit tracker</strong>. 
                         We believe that your personal routines, daily symptoms, statistical patterns, and lifestyle experiments belong solely to you.
                     </p>
                 </div>

@@ -72,7 +72,7 @@ const CausalEngine = () => {
                             </div>
 
                             <p className={classes.tableFootnote}>
-                                *Likely = passed the false-discovery check. Still a correlation, not proof of cause.
+                                *Likely = passed the false-discovery check. Still a correlation, not proof of cause. Nomos checks for confounders and filters out chance findings before it shows you anything.
                             </p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const CausalEngine = () => {
                             </div>
 
                             <p className={classes.trialIntro}>
-                                Nomos checks for confounders and filters out chance findings before it shows you anything.
+                                Stop a suspect for a week, bring it back for a week, and see the difference.
                             </p>
 
                             <div className={classes.stepper}>
@@ -122,7 +122,7 @@ const CausalEngine = () => {
                                     <span className={classes.verdictRisk}>Relative Risk: RR = 2.4</span>
                                 </div>
                                 <div className={classes.verdictBody}>
-                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (chi-square p = 0.002, FDR q ≤ 0.05).
+                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (chi-square p = 0.002).
                                 </div>
                                 <div className={classes.verdictFooter}>
                                     <button

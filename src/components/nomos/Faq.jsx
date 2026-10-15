@@ -35,8 +35,8 @@ const FAQS = [
     },
     {
         id: 'faq-import',
-        q: 'Can I import my existing habit logs from Loop Habit Tracker or spreadsheets?',
-        a: 'Yes! Nomos includes a dedicated one-tap Loop Habit Tracker importer (the .zip export) that automatically normalizes names, converts integer multipliers to true decimals, and preserves your streaks. It also supports generic CSV spreadsheet imports.',
+        q: 'Can I import my existing data from Loop Habit Tracker, Daylio or spreadsheets?',
+        a: 'Yes. Nomos imports Loop Habit Tracker’s .zip export and Daylio’s backup file (or its CSV export): your moods, activities and notes come across, so "What affects your mood" can show results from your existing history straight away. It also supports generic CSV spreadsheet imports.',
     },
     {
         id: 'faq-testing',
