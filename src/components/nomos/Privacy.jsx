@@ -1,5 +1,5 @@
 import classes from './Privacy.module.css';
-import { FiShield, FiLock, FiDatabase, FiMail, FiCheck, FiCpu, FiFileText } from 'react-icons/fi';
+import { FiShield, FiLock, FiDatabase, FiMail, FiCheck, FiCpu } from 'react-icons/fi';
 
 const Privacy = () => {
     return (
@@ -11,7 +11,7 @@ const Privacy = () => {
                         <span>Google Play Store Compliant</span>
                     </div>
                     <h2 className={classes.title}>Privacy Policy</h2>
-                    <p className={classes.effectiveDate}>Effective & Last Updated: September 2026</p>
+                    <p className={classes.effectiveDate}>Last updated: 15 October 2026</p>
                     <p className={classes.lead}>
                         Smerio Nomos is engineered from the ground up as a <strong>100% local-first, zero-telemetry habit and life tracking application</strong>. 
                         We believe that your personal routines, daily symptoms, statistical patterns, and lifestyle experiments belong solely to you.
@@ -27,12 +27,12 @@ const Privacy = () => {
                     <div className={classes.summaryCard}>
                         <div className={classes.summaryIcon}><FiCpu /></div>
                         <h4>Zero Internet Permissions</h4>
-                        <p>Nomos does not declare network permissions; data never leaves your device.</p>
+                        <p>Nomos does not declare network permissions. Your data is never sent to us or to anyone else.</p>
                     </div>
                     <div className={classes.summaryCard}>
                         <div className={classes.summaryIcon}><FiDatabase /></div>
                         <h4>0 Remote Servers</h4>
-                        <p>Zero analytics SDKs, zero advertising trackers, and zero cloud databases.</p>
+                        <p>Zero analytics SDKs, zero advertising trackers, and no servers of ours.</p>
                     </div>
                 </div>
 
@@ -62,18 +62,61 @@ const Privacy = () => {
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>3. On-Device Data Storage & Encryption</h3>
+                        <h3>3. Permissions Nomos Uses</h3>
+                        <p>
+                            None of these permissions allow network access.
+                        </p>
+                        <div className={classes.permTableWrapper}>
+                            <table className={classes.permTable}>
+                                <thead>
+                                    <tr>
+                                        <th>Permission</th>
+                                        <th>Why</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>)</td>
+                                        <td>Daily check-in and goal reminders, logging confirmations with Undo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Biometric / fingerprint</strong> (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>)</td>
+                                        <td>Optional app lock. Handled by Android; Nomos never sees your biometric data.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Run at startup, keep awake, foreground service</strong> (<code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>)</td>
+                                        <td>Used by Android&apos;s WorkManager to keep reminders and the on-device analysis scheduled after a restart.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className={classes.noteText}>
+                            Reminder notifications show tracker and goal names only when your phone is unlocked. The lock-screen version is generic.
+                        </p>
+                    </div>
+
+                    <div className={classes.clause}>
+                        <h3>4. On-Device Data Storage &amp; Encryption</h3>
                         <p>
                             All your habits, logged entries, modular attributes, and N-of-1 trial histories are saved strictly within your phone&apos;s sandboxed local Room/SQLite database.
+                        </p>
+                        <p>
+                            This can include sensitive personal information you choose to record, such as mood ratings, symptoms, sleep, medication or alcohol use. It is treated exactly like everything else: stored only on your phone and never sent to us.
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <strong>AES-256-GCM Encrypted Snapshots:</strong> When creating a backup, Nomos encrypts your entire database using AES-256-GCM authenticated encryption with a user-supplied password.</li>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Storage Access Framework (SAF):</strong> Export and import operations rely solely on system-level file pickers without requiring broad file storage permissions.</li>
                         </ul>
+                        <div className={classes.subClause}>
+                            <h4>Android Auto Backup &amp; device transfer</h4>
+                            <p>
+                                If backup is turned on in your Android settings, Android may back up Nomos&apos;s data (your logs and settings) to your private Google Drive account, or copy it directly when you move to a new phone. Android only uploads it to the cloud when your phone can encrypt it (a screen lock is set). This backup is run by Android and Google Play services, not by Nomos. We have no access to it. Widget settings and app-lock settings are never included. You can turn this off at any time in your phone&apos;s backup settings.
+                            </p>
+                        </div>
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>4. Third-Party Services & Analytics</h3>
+                        <h3>5. Third-Party Services &amp; Analytics</h3>
                         <p>
                             Smerio Nomos contains <strong>zero third-party SDKs, analytics frameworks, or advertising networks</strong>. 
                             There is no Google Firebase Analytics, Meta SDK, Mixpanel, Sentry, or third-party telemetry bundled into the application.
@@ -81,26 +124,26 @@ const Privacy = () => {
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>5. Data Retention, Portability & User Rights</h3>
+                        <h3>6. Data Retention, Portability &amp; User Rights</h3>
                         <p>
                             Because your data is stored exclusively on your physical device, you maintain full, unrestricted data sovereignty:
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Export Anytime:</strong> You can export your full database to plain JSON or standard CSV spreadsheets at any time.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Clear Data:</strong> You can erase all data instantly via Android Settings → Apps → Nomos → Clear Storage.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → Nomos → Clear storage.</li>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Permanent Deletion:</strong> Uninstalling the application immediately and irreversibly deletes all stored logs and local settings.</li>
                         </ul>
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>6. Children&apos;s Privacy (COPPA & GDPR-K)</h3>
+                        <h3>7. Children&apos;s Privacy (COPPA &amp; GDPR-K)</h3>
                         <p>
                             Nomos does not knowingly collect or solicit any personal information from children under the age of 13 (or 16 in the European Economic Area). Because the app collects no personal information whatsoever from any user, it is fully compliant with COPPA and GDPR-K.
                         </p>
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>7. Google Play Store Declarations & Contact</h3>
+                        <h3>8. Google Play Store Declarations &amp; Contact</h3>
                         <p>
                             For the Google Play Store Data Safety form declarations:
                         </p>
@@ -116,11 +159,9 @@ const Privacy = () => {
                             <FiMail className={classes.contactIcon} />
                             <div>
                                 <div className={classes.contactEmail}>
-                                    <a href="mailto:feedback@smer.io?subject=Nomos%20Privacy%20Inquiry">feedback@smer.io</a>
-                                    <span className={classes.contactDivider}>•</span>
                                     <a href="mailto:nomos@smer.io?subject=Nomos%20Privacy%20Inquiry">nomos@smer.io</a>
                                 </div>
-                                <div className={classes.contactSub}>Smerio Open Source Projects • Privacy & Security Team</div>
+                                <div className={classes.contactSub}>Smerio • Privacy &amp; Security Team</div>
                             </div>
                         </div>
                     </div>

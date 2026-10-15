@@ -16,12 +16,12 @@ const FAQS = [
     {
         id: 'faq-privacy',
         q: 'How does Nomos guarantee privacy with zero internet permissions?',
-        a: 'Nomos does not include android.permission.INTERNET in its application manifest. The Android operating system physically forbids Nomos from opening network connections. No data can ever be transmitted to external servers, ad networks, or cloud databases.',
+        a: 'Nomos does not include android.permission.INTERNET in its application manifest. The Android operating system physically forbids Nomos from opening network connections. The app itself cannot transmit data to any server, ad network or cloud database.',
     },
     {
         id: 'faq-backup',
         q: 'How do I backup or transfer my data to a new device?',
-        a: 'Under Settings → Encrypted Backup, you can generate a password-protected .backup snapshot encrypted with AES-256-GCM. You can safely transfer this file to your new device via USB, local SD card, or private drive, and restore it in one tap.',
+        a: 'Under Settings → Data & backup, you can generate a password-protected .backup snapshot encrypted with AES-256-GCM. You can safely transfer this file to your new device via USB, local SD card, or private drive, and restore it in one tap.',
     },
     {
         id: 'faq-import',

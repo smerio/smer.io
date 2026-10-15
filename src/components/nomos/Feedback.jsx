@@ -40,7 +40,7 @@ const Feedback = () => {
                     <div className={classes.badge}>Download Smerio Nomos · Android</div>
                     <h2 className={classes.title}>Install Smerio Nomos on Android</h2>
                     <p className={classes.desc}>
-                        Nomos is available directly on Google Play. 100% offline, zero trackers, zero network permissions, and hardware-backed local encryption.
+                        Nomos is available directly on Google Play. 100% offline, zero trackers, zero network permissions, and password-protected AES-256-GCM backups.
                     </p>
 
                     {/* Direct Public Download Card (Single-Click Google Play CTA) */}
@@ -163,7 +163,7 @@ const Feedback = () => {
                             </a>
 
                             <a
-                                href="mailto:feedback@smer.io?subject=Nomos%20Feedback%20%26%20Feature%20Request"
+                                href="mailto:nomos@smer.io?subject=Nomos%20Feedback%20%26%20Feature%20Request"
                                 className={classes.emailBtn}
                             >
                                 <FiMail className={classes.btnIcon} />
@@ -172,11 +172,9 @@ const Feedback = () => {
                         </div>
 
                         <div className={classes.directEmails}>
-                            <span className={classes.emailLabel}>Community & Developer Channels:</span>
+                            <span className={classes.emailLabel}>Community &amp; Developer Channels:</span>
                             <div className={classes.emailLinks}>
                                 <a href="mailto:smerio-nomos@googlegroups.com"><code>smerio-nomos@googlegroups.com</code></a>
-                                <span className={classes.divider}>•</span>
-                                <a href="mailto:feedback@smer.io"><code>feedback@smer.io</code></a>
                                 <span className={classes.divider}>•</span>
                                 <a href="mailto:nomos@smer.io"><code>nomos@smer.io</code></a>
                             </div>

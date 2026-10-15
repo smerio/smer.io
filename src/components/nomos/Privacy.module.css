@@ -217,6 +217,82 @@
     line-height: 1.4;
 }
 
+.permTableWrapper {
+    overflow-x: auto;
+    margin: 1.2rem 0;
+    border-radius: 12px;
+    border: 1px solid #2E2E2E;
+}
+
+.permTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    background: #141414;
+    text-align: left;
+}
+
+.permTable th {
+    background: #1A1A1A;
+    color: #F5F5F4;
+    font-weight: 700;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid #2E2E2E;
+    white-space: nowrap;
+}
+
+.permTable td {
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid #222222;
+    color: #D4D4D4;
+    line-height: 1.6;
+    vertical-align: top;
+}
+
+.permTable tr:last-child td {
+    border-bottom: none;
+}
+
+.permTable code {
+    background: #242424;
+    color: #34D399;
+    font-family: 'DM Mono', monospace;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #333333;
+    font-size: 0.82rem;
+}
+
+.noteText {
+    font-size: 0.88rem;
+    color: #999999;
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0.6rem 0 0 0;
+}
+
+.subClause {
+    background: #141414;
+    border: 1px solid #282828;
+    border-radius: 14px;
+    padding: 1.25rem 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.subClause h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #34D399;
+    margin: 0 0 0.5rem 0;
+}
+
+.subClause p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #B5B5B5;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .summaryCards {
         grid-template-columns: 1fr;
