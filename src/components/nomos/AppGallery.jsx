@@ -28,15 +28,15 @@ const SPOTLIGHT_DEVICES = [
         highlight: 'Five mood faces · One-tap activity chips · Home-screen widget',
     },
     {
-        id: 'discoveries',
-        title: 'Statistical Discoveries & Trials',
-        subtitle: 'Automated contingency analysis, Chi-Square tests, and N-of-1 elimination experiments.',
+        id: 'honest-results',
+        title: 'Honest about what it finds',
+        subtitle: 'Says "No clear effect" instead of inventing a link, and never calls a link proof.',
         src: '/nomos/06-honest-results.png',
         alt: 'Trackers marked No clear effect, with "Still a correlation, not proof of cause"',
-        tag: 'Statistical Discoveries',
+        tag: 'Honest Results',
         accent: '#F59E0B',
         icon: <FiBarChart2 size={18} />,
-        highlight: 'Chi-square tests · Time-lagged triggers · N-of-1 protocols',
+        highlight: 'No clear effect labels · False-discovery control · Collecting progress',
     },
 ];
 

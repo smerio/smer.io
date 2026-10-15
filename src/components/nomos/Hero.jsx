@@ -82,6 +82,12 @@ const Hero = () => {
                         Check in once a day: rate your mood and tick what happened. Nomos compares your better and worse days with honest statistics and shows what goes with each. Zero accounts. Zero internet permissions. 100% on your phone.
                     </p>
 
+                    <div className={classes.daylioLinkRow}>
+                        <a href="#daylio-import" className={classes.daylioLink}>
+                            Coming from Daylio? Import your history &rarr;
+                        </a>
+                    </div>
+
                     <div className={classes.ctaRow}>
                         <a
                             href="https://play.google.com/store/apps/details?id=io.smer.nomos"
@@ -187,7 +193,7 @@ const Hero = () => {
                             <div className={classes.activitySectionHeader}>
                                 <span className={classes.activitySectionLabel}>Tick what happened</span>
                                 <button type="button" className={classes.routineLink} onClick={fillRoutine}>
-                                    Same as yesterday
+                                    Same as the day before
                                 </button>
                             </div>
                             <div className={classes.chipsGrid}>

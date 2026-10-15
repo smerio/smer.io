@@ -1,5 +1,5 @@
 import classes from './DataPortability.module.css';
-import { FiLock, FiDownload, FiUpload, FiDatabase, FiCheck, FiShield } from 'react-icons/fi';
+import { FiLock, FiDownload, FiUpload, FiDatabase, FiCheck, FiShield, FiSmile } from 'react-icons/fi';
 
 const FEATURES = [
     {
@@ -13,6 +13,13 @@ const FEATURES = [
         title: 'Loop Habit Tracker Importer',
         desc: 'Migrate your entire habit history from Loop Habit Tracker in seconds. Automatically scales integer multipliers, preserves streaks, and transfers target frequencies.',
         accent: '#10B981',
+    },
+    {
+        id: 'daylio-import',
+        icon: <FiSmile />,
+        title: 'Daylio Importer',
+        desc: 'Bring your mood history from Daylio. Import its backup file (Daylio → Backup & Restore → Advanced Options → Export, no Premium needed) or its CSV export: moods, activities and notes come across, so "What affects your mood" can show results on the first day.',
+        accent: '#EC4899',
     },
     {
         icon: <FiDownload />,
@@ -39,13 +46,13 @@ const DataPortability = () => {
                     </div>
                     <h2 className={classes.title}>Complete Data Ownership & Portability</h2>
                     <p className={classes.subtitle}>
-                        No vendor lock-in. Export, encrypt, backup, or import your personal habit history whenever you want.
+                        No vendor lock-in. Export, encrypt, backup, or import your mood and habit history whenever you want.
                     </p>
                 </div>
 
                 <div className={classes.grid}>
                     {FEATURES.map((f, i) => (
-                        <div key={i} className={classes.card} style={{ '--card-accent': f.accent }}>
+                        <div key={i} id={f.id} className={classes.card} style={{ '--card-accent': f.accent }}>
                             <div className={classes.iconBox} style={{ background: `${f.accent}18`, color: f.accent }}>
                                 {f.icon}
                             </div>
