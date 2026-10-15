@@ -223,7 +223,7 @@ const ProductGrid = () => {
                             <FiArrowRight aria-hidden="true" />
                         </Link>
                         <a
-                            href="https://github.com/smerio/smerio"
+                            href="https://github.com/smerio"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={classes.ctaSecondary}

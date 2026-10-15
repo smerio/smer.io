@@ -1,8 +1,8 @@
 const SMERIO_SUBNAV = [
     { name: 'Docs', path: '/docs' },
     { name: 'Telegram Bot', path: '/features/telegram-bot' },
-    { name: 'GitHub', path: 'https://github.com/smerio/smerio', external: true },
-    { name: 'Get latest', path: 'https://github.com/smerio/smerio/releases', external: true, cta: true },
+    { name: 'GitHub', path: 'https://github.com/smerio', external: true },
+    { name: 'Get latest', path: 'https://github.com/smerio/smer.io/releases', external: true, cta: true },
 ];
 
 const AMBIT_SUBNAV = [
@@ -20,7 +20,7 @@ const NOMOS_SUBNAV = [
     { name: 'Pillars', path: '#principles', anchor: true },
     { name: '1-Tap Log', path: '#fast-log', anchor: true },
     { name: 'Momentum', path: '#momentum', anchor: true },
-    { name: 'Causal Engine', path: '#causal-discovery', anchor: true },
+    { name: 'Discoveries', path: '#causal-discovery', anchor: true },
     { name: 'Discoveries Guide', path: '/nomos/discoveries' },
     { name: 'Screens', path: '#gallery', anchor: true },
     { name: 'Download', path: '#download', anchor: true },
@@ -46,7 +46,7 @@ const HOME_SUBNAV = [
     { name: 'Nomos', path: '/nomos' },
     { name: 'Ambit', path: '/ambit' },
     { name: 'Docs', path: '/docs' },
-    { name: 'GitHub', path: 'https://github.com/smerio/smerio', external: true },
+    { name: 'GitHub', path: 'https://github.com/smerio', external: true },
 ];
 
 export const getSubNavItems = (pathname) => {

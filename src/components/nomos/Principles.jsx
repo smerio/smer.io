@@ -37,11 +37,11 @@ const PRINCIPLES = [
         icon: <FiCpu />,
         accent: '#06B6D4',
         tag: 'PILLAR 3',
-        title: 'On-Device Causal Discovery & Personal Trials',
+        title: 'On-Device Discoveries & Personal Trials',
         description:
             'Move beyond misleading correlations. Nomos runs rigorous on-device statistical engines (Chi-Square exact p-values, False Discovery Rate control, and 2x2 Odds Ratios). Test your lifestyle hypotheses with automated 2-phase N-of-1 elimination experiments (Elimination → Reintroduction → Statistical Verdict).',
         bullets: [
-            'Causal classification: Routine Stacks, Time-Lagged Triggers, and Confounder Warnings',
+            'Pattern types: Routine Stacks, Time-Lagged Triggers, and Confounder Warnings',
             '2-Phase N-of-1 elimination trial protocols with automated Relative Risk verdicts',
             'Benjamini-Hochberg FDR control to filter out random spurious correlations',
             '100% on-device compute: all statistical modeling executes locally on your phone',

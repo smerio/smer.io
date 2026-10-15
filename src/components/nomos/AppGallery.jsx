@@ -30,7 +30,7 @@ const SPOTLIGHT_DEVICES = [
         title: 'Statistical Discoveries & Trials',
         subtitle: 'Automated 2x2 contingency analysis, Odds Ratios, Chi-Square, and N-of-1 elimination experiments.',
         src: '/nomos/screenshot-2-discoveries.png',
-        tag: 'Causal Inference',
+        tag: 'Statistical Discoveries',
         accent: '#F59E0B',
         icon: <FiBarChart2 size={18} />,
         highlight: 'Fisher exact test p-values · Time-lagged triggers · N-of-1 protocols',
