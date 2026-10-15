@@ -38,7 +38,7 @@ const DISCOVERIES = [
 const TRIAL_STEPS = [
     { phase: 'Phase 1: Elimination', days: 'Days 1–7', desc: 'Completely eliminate suspected trigger (e.g. Late Alcohol) from your evening routine.', status: 'Done' },
     { phase: 'Phase 2: Reintroduction', days: 'Days 8–14', desc: 'Reintroduce habit in controlled quantity to measure symptom recurrence.', status: 'Active' },
-    { phase: 'Automated Verdict', days: 'Day 15', desc: 'Chi-square calculation determines if causal relative risk RR ≥ 1.8 is statistically confirmed.', status: 'Pending' },
+    { phase: 'Automated Verdict', days: 'Day 15', desc: 'A chi-square test checks whether the difference between the two phases (relative risk ≥ 1.8) is statistically significant.', status: 'Pending' },
 ];
 
 const CausalEngine = () => {
@@ -53,7 +53,7 @@ const CausalEngine = () => {
                         <FiCpu className={classes.badgeIcon} />
                         <span>Scientific Discovery</span>
                     </div>
-                    <h2 className={classes.title}>On-Device Causal Discovery & Personal Trials</h2>
+                    <h2 className={classes.title}>On-Device Discoveries & Personal Trials</h2>
                     <p className={classes.subtitle}>
                         Don&apos;t settle for superficial correlations. Nomos isolates genuine drivers with contingency matrices, confounder stratification, and 14-day N-of-1 elimination protocols.
                     </p>
@@ -141,7 +141,7 @@ const CausalEngine = () => {
                                     <span className={classes.verdictRisk}>Relative Risk: RR = 2.4</span>
                                 </div>
                                 <div className={classes.verdictBody}>
-                                    <strong>Causal Link Confirmed:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (p = 0.002, FDR q ≤ 0.05).
+                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (p = 0.002, FDR q ≤ 0.05).
                                 </div>
                                 <div className={classes.verdictFooter}>
                                     <button

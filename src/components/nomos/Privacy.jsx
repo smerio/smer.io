@@ -130,7 +130,7 @@ const Privacy = () => {
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Export Anytime:</strong> You can export your full database to plain JSON or standard CSV spreadsheets at any time.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → Nomos → Clear storage.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → <strong>S Nomos</strong> → Clear storage.</li>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Permanent Deletion:</strong> Uninstalling the application immediately and irreversibly deletes all stored logs and local settings.</li>
                         </ul>
                     </div>

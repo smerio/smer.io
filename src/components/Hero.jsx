@@ -12,7 +12,7 @@ const Hero = () => {
                 </p>
                 <div className={classes.actions}>
                     <a href="https://demo.smer.io" target="_blank" rel="noreferrer" className={`${classes.btn} ${classes.primary}`}>Live demo</a>
-                    <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer" className={`${classes.btn} ${classes.secondary}`}>
+                    <a href="https://github.com/smerio" target="_blank" rel="noreferrer" className={`${classes.btn} ${classes.secondary}`}>
                         View on GitHub
                     </a>
                 </div>

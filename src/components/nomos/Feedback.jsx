@@ -57,7 +57,7 @@ const Feedback = () => {
                             <div className={classes.directText}>
                                 <h3 className={classes.directTitle}>Get it on Google Play</h3>
                                 <p className={classes.directDesc}>
-                                    Download Nomos immediately to your Android device with a single click. No mandatory group memberships or waitlists required. Experience fast 1-tap habit logging and on-device causal discovery.
+                                    Download Nomos immediately to your Android device with a single click. No mandatory group memberships or waitlists required. Experience fast 1-tap habit logging and on-device statistical discovery.
                                 </p>
                                 <div className={classes.perksList}>
                                     <span className={classes.perkItem}><FiCheck className={classes.perkIcon} /> Direct 1-Tap Install</span>

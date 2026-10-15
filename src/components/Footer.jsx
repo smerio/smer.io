@@ -16,9 +16,11 @@ const Footer = () => {
                     <Link to="/nomos/discoveries">Nomos Discoveries</Link>
                     <Link to="/ambit#privacy">Ambit Privacy</Link>
                     <Link to="/docs">Documentation</Link>
-                    <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer">GitHub</a>
                     {!isNomos && (
-                        <a href="https://github.com/smerio/smerio/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
+                        <>
+                            <a href="https://github.com/smerio" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://github.com/smerio/smer.io/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
+                        </>
                     )}
                 </div>
                 &copy; {new Date().getFullYear()} Smerio.
