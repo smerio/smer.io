@@ -17,10 +17,10 @@ const AMBIT_SUBNAV = [
 ];
 
 const NOMOS_SUBNAV = [
-    { name: 'Pillars', path: '#principles', anchor: true },
-    { name: '1-Tap Log', path: '#fast-log', anchor: true },
-    { name: 'Momentum', path: '#momentum', anchor: true },
+    { name: 'How It Works', path: '#principles', anchor: true },
+    { name: 'Check-in', path: '#fast-log', anchor: true },
     { name: 'Discoveries', path: '#causal-discovery', anchor: true },
+    { name: 'Heatmaps', path: '#momentum', anchor: true },
     { name: 'Discoveries Guide', path: '/nomos/discoveries' },
     { name: 'Screens', path: '#gallery', anchor: true },
     { name: 'Download', path: '#download', anchor: true },
@@ -34,6 +34,7 @@ const NOMOS_DISCOVERIES_SUBNAV = [
     { name: 'How It Works', path: '#how-it-works', anchor: true },
     { name: 'Reading a Card', path: '#reading-a-card', anchor: true },
     { name: 'Card Types', path: '#time-lagged-trigger', anchor: true },
+    { name: 'What Affects Mood', path: '#what-affects-mood', anchor: true },
     { name: 'Personal Trials', path: '#personal-trials', anchor: true },
     { name: 'Trial Verdicts', path: '#trial-verdicts', anchor: true },
     { name: 'FAQ', path: '#faq', anchor: true },

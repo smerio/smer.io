@@ -1,38 +1,13 @@
 import { useState } from 'react';
 import classes from './CausalEngine.module.css';
-import { FiCpu, FiAlertTriangle, FiClock, FiCheck, FiArrowRight, FiActivity, FiHelpCircle } from 'react-icons/fi';
+import { FiTrendingUp, FiCheck, FiArrowRight, FiActivity } from 'react-icons/fi';
 
-const DISCOVERIES = [
-    {
-        id: 'lag',
-        badge: '⏳ TIME-LAGGED TRIGGER',
-        badgeClass: 'badgeCyan',
-        title: 'Late Alcohol ➔ Sleep Restlessness',
-        hypothesis: 'Consuming alcohol after 21:00 significantly degrades sleep restfulness the following night.',
-        stats: { lift: '+84.2% Risk', or: '3.42', pVal: 'p < 0.001', n: '118 entries' },
-        actionText: 'Launch N-of-1 Trial',
-        canTrial: true,
-    },
-    {
-        id: 'stack',
-        badge: '🔗 ROUTINE STACK',
-        badgeClass: 'badgePurple',
-        title: 'Creatine + Resistance Training',
-        hypothesis: 'Symmetric intentional behavior bundle. High co-occurrence identified without negative causation.',
-        stats: { lift: '94.6% Synergy', or: '12.8', pVal: 'p < 0.0001', n: '82 entries' },
-        actionText: 'Reinforce Stack',
-        canTrial: false,
-    },
-    {
-        id: 'confounder',
-        badge: '⚠️ MEDIATED CONFOUNDER',
-        badgeClass: 'badgeRed',
-        title: 'Banana ➔ Migraine (Spurious)',
-        hypothesis: 'Correlation drops to 0 when stratified by Sleep Deprivation. Bananas are consumed as comfort food after poor sleep.',
-        stats: { lift: 'Stratified Drop', or: '1.04 (Adj)', pVal: 'p = 0.68', n: '94 entries' },
-        actionText: 'View Confounder Graph',
-        canTrial: false,
-    },
+const MOOD_FACTORS = [
+    { tracker: 'Alcohol', change: '−1.1', status: 'Likely · day after', type: 'likely', isNegative: true },
+    { tracker: 'Exercise', change: '+0.7', status: 'Likely · same day', type: 'likely', isNegative: false },
+    { tracker: 'Slept badly', change: '−0.7', status: 'Likely · same day', type: 'likely', isNegative: true },
+    { tracker: 'Friends', change: '+0.3', status: 'No clear effect · 71 vs 192 days', type: 'neutral', isNegative: false },
+    { tracker: 'Magnesium', change: '—', status: 'Collecting · needs 3 more days without it', type: 'collecting', isNegative: null },
 ];
 
 const TRIAL_STEPS = [
@@ -43,56 +18,62 @@ const TRIAL_STEPS = [
 
 const CausalEngine = () => {
     const [activeTrialPhase, setActiveTrialPhase] = useState(1);
-    const [selectedCard, setSelectedCard] = useState(DISCOVERIES[0]);
 
     return (
         <section className={classes.section} id="causal-discovery">
             <div className={classes.container}>
                 <div className={classes.header}>
                     <div className={classes.badge}>
-                        <FiCpu className={classes.badgeIcon} />
-                        <span>Scientific Discovery</span>
+                        <FiTrendingUp className={classes.badgeIcon} />
+                        <span>Honest Statistics</span>
                     </div>
-                    <h2 className={classes.title}>On-Device Discoveries & Personal Trials</h2>
+                    <h2 className={classes.title}>What affects your mood</h2>
                     <p className={classes.subtitle}>
-                        Don&apos;t settle for superficial correlations. Nomos isolates genuine drivers with contingency matrices, confounder stratification, and 14-day N-of-1 elimination protocols.
+                        Every tracker is compared with your mood: on the days you did it versus the days you didn&apos;t, and on the day after.
                     </p>
                 </div>
 
                 <div className={classes.mainGrid}>
-                    {/* Left Column: Discovery Cards */}
+                    {/* Left Column: What Affects Your Mood Table */}
                     <div className={classes.cardsCol}>
-                        <h3 className={classes.colTitle}>Automated Pattern Scan</h3>
-                        <div className={classes.cardsList}>
-                            {DISCOVERIES.map((d) => (
-                                <div
-                                    key={d.id}
-                                    className={`${classes.discoveryCard} ${selectedCard.id === d.id ? classes.discoveryCardActive : ''}`}
-                                    onClick={() => setSelectedCard(d)}
-                                >
-                                    <div className={classes.cardHeader}>
-                                        <span className={`${classes.tagBadge} ${classes[d.badgeClass]}`}>{d.badge}</span>
-                                        <span className={classes.sampleSize}>{d.stats.n}</span>
-                                    </div>
-                                    <h4 className={classes.discTitle}>{d.title}</h4>
-                                    <p className={classes.discHypothesis}>{d.hypothesis}</p>
+                        <div className={classes.colHeader}>
+                            <h3 className={classes.colTitle}>Mood Comparison Feed</h3>
+                            <span className={classes.exampleBadge}>Example</span>
+                        </div>
 
-                                    <div className={classes.statsRow}>
-                                        <div className={classes.statBox}>
-                                            <span className={classes.statLabel}>Lift / Effect</span>
-                                            <span className={classes.statVal}>{d.stats.lift}</span>
-                                        </div>
-                                        <div className={classes.statBox}>
-                                            <span className={classes.statLabel}>Odds Ratio (OR)</span>
-                                            <span className={classes.statVal}>{d.stats.or}</span>
-                                        </div>
-                                        <div className={classes.statBox}>
-                                            <span className={classes.statLabel}>Confidence</span>
-                                            <span className={classes.statVal}>{d.stats.pVal}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className={classes.tableCard}>
+                            <div className={classes.tableWrap}>
+                                <table className={classes.moodTable}>
+                                    <thead>
+                                        <tr>
+                                            <th>Tracker</th>
+                                            <th>Change in mood (1–5)</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {MOOD_FACTORS.map((row) => (
+                                            <tr key={row.tracker}>
+                                                <td className={classes.trackerCell}>
+                                                    <strong>{row.tracker}</strong>
+                                                </td>
+                                                <td className={`${classes.changeCell} ${row.isNegative === true ? classes.changeNeg : row.isNegative === false ? classes.changePos : classes.changeNeutral}`}>
+                                                    {row.change}
+                                                </td>
+                                                <td className={classes.statusCell}>
+                                                    <span className={`${classes.statusPill} ${classes[row.type]}`}>
+                                                        {row.status}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p className={classes.tableFootnote}>
+                                *Likely = passed the false-discovery check. Still a correlation, not proof of cause.
+                            </p>
                         </div>
                     </div>
 
@@ -104,13 +85,13 @@ const CausalEngine = () => {
                                     <FiActivity />
                                 </div>
                                 <div>
-                                    <h3 className={classes.trialTitle}>2-Phase N-of-1 Personal Trial</h3>
-                                    <span className={classes.trialSub}>Protocol for: {selectedCard.title}</span>
+                                    <h3 className={classes.trialTitle}>Test a suspicion with a personal trial</h3>
+                                    <span className={classes.trialSub}>2-Phase N-of-1 Experiment</span>
                                 </div>
                             </div>
 
                             <p className={classes.trialIntro}>
-                                Eliminate guesswork. Nomos guides you through an empirical single-subject trial protocol:
+                                Nomos checks for confounders and filters out chance findings before it shows you anything.
                             </p>
 
                             <div className={classes.stepper}>
@@ -141,7 +122,7 @@ const CausalEngine = () => {
                                     <span className={classes.verdictRisk}>Relative Risk: RR = 2.4</span>
                                 </div>
                                 <div className={classes.verdictBody}>
-                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (p = 0.002, FDR q ≤ 0.05).
+                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (chi-square p = 0.002, FDR q ≤ 0.05).
                                 </div>
                                 <div className={classes.verdictFooter}>
                                     <button
@@ -153,6 +134,10 @@ const CausalEngine = () => {
                                     </button>
                                 </div>
                             </div>
+
+                            <p className={classes.trialScopeNote}>
+                                *Trials currently work for yes/no outcomes such as symptoms; mood-rating trials are coming.
+                            </p>
                         </div>
                     </div>
                 </div>

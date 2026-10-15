@@ -38,6 +38,7 @@ const NomosDiscoveries = () => {
                             <li><a href="#symptom-co-occurrence" className={classes.navLink}>Symptom co-occurrence</a></li>
                             <li><a href="#mediated-confounder" className={classes.navLink}>Mediated confounder</a></li>
                             <li><a href="#target-goal-driver" className={classes.navLink}>Target goal & rating drivers</a></li>
+                            <li><a href="#what-affects-mood" className={classes.navLink}>What affects your mood</a></li>
                             <li><a href="#timing-patterns" className={classes.navLink}>Timing patterns</a></li>
                             <li><a href="#personal-trials" className={classes.navLink}>N-of-1 personal trials</a></li>
                             <li><a href="#trial-verdicts" className={classes.navLink}>What trial results mean</a></li>
@@ -77,6 +78,7 @@ const NomosDiscoveries = () => {
                             <li><a href="#symptom-co-occurrence">Symptom co-occurrence</a></li>
                             <li><a href="#mediated-confounder">Mediated confounder</a></li>
                             <li><a href="#target-goal-driver">Target goal & rating drivers</a></li>
+                            <li><a href="#what-affects-mood">What affects your mood</a></li>
                             <li><a href="#timing-patterns">Timing patterns</a></li>
                             <li><a href="#personal-trials">N-of-1 personal trials</a></li>
                             <li><a href="#trial-verdicts">What trial results mean</a></li>
@@ -292,7 +294,32 @@ const NomosDiscoveries = () => {
                             </p>
                         </div>
 
-                        {/* 10. Timing patterns */}
+                        {/* 10. What affects your mood */}
+                        <div id="what-affects-mood">
+                            <h3 className={classes.sectionSubtitle}>
+                                <span className={`${classes.badgeChip} ${classes.badgeCyan}`}>What affects your mood</span>
+                                <span>"What affects your mood" table</span>
+                            </h3>
+                            <p className={classes.paragraph}>
+                                At the top of Discoveries, each rating gets a table of <strong>every</strong> tracker with one of three statuses:
+                            </p>
+                            <ul className={classes.featureList}>
+                                <li>
+                                    <strong>Likely:</strong> a card passed all the checks. Shows the change in points and whether it's on the same day or the day after.
+                                </li>
+                                <li>
+                                    <strong>No clear effect:</strong> enough days on both sides (with and without the activity), but no statistically reliable difference.
+                                </li>
+                                <li>
+                                    <strong>Collecting:</strong> shows days with (✓) and without (✗) the tracker, and how many more are needed (at least 4 of each), so you can see progress instead of silence.
+                                </li>
+                            </ul>
+                            <div className={classes.exampleBox}>
+                                <em>"Likely" is still a correlation in your own data, not proof of cause.</em>
+                            </div>
+                        </div>
+
+                        {/* 11. Timing patterns */}
                         <div id="timing-patterns">
                             <h3 className={classes.sectionSubtitle}>
                                 <span className={`${classes.badgeChip} ${classes.badgeEmerald}`}>Timing patterns</span>

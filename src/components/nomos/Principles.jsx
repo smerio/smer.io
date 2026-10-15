@@ -1,50 +1,51 @@
 import classes from './Principles.module.css';
-import { FiZap, FiGrid, FiCpu, FiCheckCircle } from 'react-icons/fi';
+import { FiSmile, FiTrendingUp, FiZap, FiCheckCircle } from 'react-icons/fi';
 
 const PRINCIPLES = [
     {
         id: 'fast-log',
-        icon: <FiZap />,
+        icon: <FiSmile />,
         accent: '#10B981',
         tag: 'PILLAR 1',
-        title: '1-Tap Fast Logging & Zero Friction',
+        title: 'One check-in a day',
         description:
-            'Most trackers fail because multi-step modal forms make daily logging a chore. In Nomos, every habit records in exactly one tap with your personalized default attributes. When you need granularity, expandable drawers offer numeric steppers, rating scales (1–5), and categorical boolean tags in seconds.',
+            'Rate your mood with five faces and tick what happened: sleep, exercise, coffee, friends. Leave unticked what didn\'t happen; that\'s data too. "Same as the day before" fills in a routine day, and you can answer straight from the evening reminder or the Mood widget on your home screen.',
         bullets: [
-            '1-Tap logging with pre-configured default values (e.g. 1000 ml water)',
-            'Relative time shortcuts: Now, 1h ago, Last Night, Yesterday',
-            'Expandable drawer for optional deep attribute adjustments',
-            'Full support for boolean chips, 1–5 scales, and numeric inputs with custom units',
-        ],
-    },
-    {
-        id: 'momentum',
-        icon: <FiGrid />,
-        accent: '#6366F1',
-        tag: 'PILLAR 2',
-        title: 'Visual Momentum & Pixela Heatmaps',
-        description:
-            'Build honest consistency with GitHub/Pixela-style contribution matrices. Nomos features real-time anchoring—inactive habits display genuine historical gaps rather than skewed timelines. Seamlessly drill down from annual 52-week calendars to monthly views and 24-hour chronological day timelines.',
-        bullets: [
-            '52-week contribution heatmap grids with 5 intensity ramps',
-            'Multi-scale temporal zoom: All Time → Year → Month → Week → 24h Day',
-            'Period-aware streaks: consecutive day and period tracking with honest zero-resets',
-            '24-Hour circadian density charts revealing morning, afternoon, and night patterns',
+            'Five faces, from Awful to Great',
+            'Your activities as one-tap chips',
+            'Answer from the reminder notification or the 4×1 Mood widget',
+            'Your mood is never filled in with a default value',
         ],
     },
     {
         id: 'causal-discovery',
-        icon: <FiCpu />,
+        icon: <FiTrendingUp />,
         accent: '#06B6D4',
-        tag: 'PILLAR 3',
-        title: 'On-Device Discoveries & Personal Trials',
+        tag: 'PILLAR 2',
+        title: 'What affects your mood',
         description:
-            'Move beyond misleading correlations. Nomos runs rigorous on-device statistical engines (Chi-Square exact p-values, False Discovery Rate control, and 2x2 Odds Ratios). Test your lifestyle hypotheses with automated 2-phase N-of-1 elimination experiments (Elimination → Reintroduction → Statistical Verdict).',
+            'Nomos compares the days you did something with the days you didn\'t, on the same day and the day after, and lists every tracker as Likely, No clear effect or Collecting, with how many more days it still needs.',
         bullets: [
-            'Pattern types: Routine Stacks, Time-Lagged Triggers, and Confounder Warnings',
-            '2-Phase N-of-1 elimination trial protocols with automated Relative Risk verdicts',
-            'Benjamini-Hochberg FDR control to filter out random spurious correlations',
-            '100% on-device compute: all statistical modeling executes locally on your phone',
+            'Same-day and next-day links (last night\'s drinks, today\'s mood)',
+            'False-discovery control, so random coincidences don\'t turn into findings',
+            'Says "No clear effect" instead of inventing a link',
+            'First trends after 2–3 weeks of check-ins, solid answers in 4–6',
+        ],
+        footnote: 'A link is a pattern in your own data, not proof of cause.',
+    },
+    {
+        id: 'momentum',
+        icon: <FiZap />,
+        accent: '#8B5CF6',
+        tag: 'PILLAR 3',
+        title: 'Habits, heatmaps and one-tap logging',
+        description:
+            'Every habit, symptom or amount gets its own button: one tap records it with your usual value, and one more tap changes the amount or time. Heatmaps and period-aware streaks show your consistency over weeks and months.',
+        bullets: [
+            'One-tap logging with your default values (e.g. 1000 ml water)',
+            'Now / 1h ago / Last night / Yesterday shortcuts',
+            '52-week heatmaps, monthly and weekday charts',
+            'Daily, weekly and monthly goals with honest streaks',
         ],
     },
 ];
@@ -55,9 +56,9 @@ const Principles = () => {
             <div className={classes.container}>
                 <div className={classes.header}>
                     <div className={classes.badge}>Architecture & Philosophy</div>
-                    <h2 className={classes.title}>The Three Pillars of Smerio Nomos</h2>
+                    <h2 className={classes.title}>How Nomos works</h2>
                     <p className={classes.subtitle}>
-                        Designed from first principles to turn daily capture into effortless habit momentum and scientific personal insight.
+                        A daily check-in, honest statistics, and your habits, all on your phone.
                     </p>
                 </div>
 
@@ -84,6 +85,12 @@ const Principles = () => {
                                     </li>
                                 ))}
                             </ul>
+
+                            {p.footnote && (
+                                <p className={classes.cardFootnote}>
+                                    <em>{p.footnote}</em>
+                                </p>
+                            )}
                         </div>
                     ))}
                 </div>

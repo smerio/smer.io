@@ -57,117 +57,139 @@
     align-items: start;
 }
 
+.colHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
 .colTitle {
     font-size: 1.15rem;
     font-weight: 700;
     color: #F5F5F4;
-    margin: 0 0 1.2rem 0;
+    margin: 0;
 }
 
-.cardsList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+.exampleBadge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(34, 211, 238, 0.12);
+    color: #22D3EE;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
 }
 
-.discoveryCard {
+.tableCard {
     background: #181818;
     border: 1px solid #2A2A2A;
     border-radius: 20px;
     padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.discoveryCard:hover {
-    border-color: #444444;
-    transform: translateY(-2px);
+.tableWrap {
+    overflow-x: auto;
 }
 
-.discoveryCardActive {
-    border-color: #22D3EE;
-    background: #1C2224;
-    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+.moodTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
 }
 
-.cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.tagBadge {
-    font-size: 0.7rem;
-    font-weight: 800;
+.moodTable th {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    border: 1px solid;
+    color: #8A8A8A;
+    border-bottom: 1px solid #2B2B2B;
 }
 
-.badgeCyan {
-    background: rgba(6, 182, 212, 0.15);
-    color: #22D3EE;
-    border-color: rgba(6, 182, 212, 0.35);
+.moodTable td {
+    padding: 0.9rem 0.85rem;
+    border-bottom: 1px solid #242424;
+    vertical-align: middle;
 }
 
-.badgePurple {
-    background: rgba(139, 92, 246, 0.15);
-    color: #A78BFA;
-    border-color: rgba(139, 92, 246, 0.35);
+.moodTable tbody tr:last-child td {
+    border-bottom: none;
 }
 
-.badgeRed {
-    background: rgba(239, 68, 68, 0.15);
-    color: #F87171;
-    border-color: rgba(239, 68, 68, 0.35);
+.trackerCell strong {
+    color: #F5F5F4;
+    font-weight: 600;
 }
 
-.sampleSize {
+.changeCell {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.changePos {
+    color: #34D399;
+}
+
+.changeNeg {
+    color: #F87171;
+}
+
+.changeNeutral {
     color: #8A8A8A;
 }
 
-.discTitle {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #F5F5F4;
-    margin: 0 0 0.5rem 0;
+.statusPill {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    line-height: 1.3;
 }
 
-.discHypothesis {
-    font-size: 0.88rem;
-    line-height: 1.55;
+.likely {
+    background: rgba(16, 185, 129, 0.14);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.neutral {
+    background: rgba(255, 255, 255, 0.06);
     color: #A3A3A3;
-    margin: 0 0 1.2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.statsRow {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    padding-top: 1rem;
-    border-top: 1px solid #262626;
+.collecting {
+    background: rgba(245, 158, 11, 0.12);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.28);
 }
 
-.statBox {
-    display: flex;
-    flex-direction: column;
+.tableFootnote {
+    margin-top: 1.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed #2B2B2B;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: #8A8A8A;
+    line-height: 1.45;
 }
 
-.statLabel {
-    font-size: 0.7rem;
-    color: #7A7A7A;
-    margin-bottom: 0.2rem;
-}
-
-.statVal {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #E5E5E5;
+.trialScopeNote {
+    margin-top: 1.2rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    font-style: italic;
+    color: #8A8A8A;
+    line-height: 1.45;
 }
 
 /* Trial Simulator Column */

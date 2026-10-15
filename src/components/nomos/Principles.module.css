@@ -146,6 +146,15 @@
     flex-shrink: 0;
 }
 
+.cardFootnote {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 0.78rem;
+    color: #A3A3A3;
+    line-height: 1.4;
+}
+
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: 1fr;

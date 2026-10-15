@@ -12,7 +12,7 @@ import Faq from '../components/nomos/Faq';
 const Nomos = () => {
     useEffect(() => {
         const prevTitle = document.title;
-        document.title = 'Smerio Nomos — Privacy-First Modular Life & Habit Tracker for Android';
+        document.title = 'Smerio Nomos — Find out what affects your mood';
 
         // Scroll to hash if present
         if (window.location.hash) {
