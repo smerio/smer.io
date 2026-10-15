@@ -1,37 +1,63 @@
 import { useState } from 'react';
 import classes from './Hero.module.css';
-import { FiCheck, FiChevronRight, FiClock, FiShield, FiExternalLink, FiAward } from 'react-icons/fi';
+import { FiCheck, FiChevronRight, FiClock, FiShield, FiExternalLink, FiAward, FiSmile } from 'react-icons/fi';
 import { FaGooglePlay } from 'react-icons/fa';
 
-const DEFAULT_HABITS = [
-    { id: 'water', name: 'Water Intake', icon: '💧', color: '#10B981', defaultVal: '1000 ml', unit: 'ml', count: 184, streak: '24d', logged: false },
-    { id: 'focus', name: 'Deep Work', icon: '⚡', color: '#F59E0B', defaultVal: '90 mins', unit: 'mins', count: 96, streak: '12d', logged: false },
-    { id: 'training', name: 'Body Training', icon: '🏋️', color: '#6366F1', defaultVal: '45 mins', unit: 'mins', count: 62, streak: '5d', logged: false },
-    { id: 'meditation', name: 'Mindfulness', icon: '🧘', color: '#8B5CF6', defaultVal: '15 mins', unit: 'mins', count: 142, streak: '18d', logged: false },
+const MOOD_OPTIONS = [
+    { value: 1, label: 'Awful', emoji: '😖', color: '#EF4444' },
+    { value: 2, label: 'Bad', emoji: '🙁', color: '#F97316' },
+    { value: 3, label: 'Okay', emoji: '😐', color: '#F59E0B' },
+    { value: 4, label: 'Good', emoji: '🙂', color: '#10B981' },
+    { value: 5, label: 'Great', emoji: '😄', color: '#06B6D4' },
+];
+
+const DEFAULT_ACTIVITIES = [
+    { id: 'exercise', label: 'Exercise', icon: '🏃' },
+    { id: 'friends', label: 'Friends', icon: '👥' },
+    { id: 'slept-badly', label: 'Slept badly', icon: '😴' },
+    { id: 'alcohol', label: 'Alcohol', icon: '🍷' },
+    { id: 'coffee', label: 'Coffee', icon: '☕' },
+    { id: 'deep-work', label: 'Deep Work', icon: '⚡' },
 ];
 
 const Hero = () => {
-    const [habits, setHabits] = useState(DEFAULT_HABITS);
-    const [lastLogged, setLastLogged] = useState(null);
+    const [selectedMood, setSelectedMood] = useState(4); // default Good
+    const [selectedActivities, setSelectedActivities] = useState(['exercise', 'coffee']);
     const [timeMode, setTimeMode] = useState('Now');
+    const [savedState, setSavedState] = useState(null);
 
-    const handleLog = (id) => {
-        setHabits((prev) =>
-            prev.map((h) => {
-                if (h.id === id) {
-                    return { ...h, logged: true, count: h.count + 1 };
-                }
-                return h;
-            })
+    const toggleActivity = (id) => {
+        setSelectedActivities((prev) =>
+            prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
         );
-        const habit = habits.find((h) => h.id === id);
-        setLastLogged({ name: habit.name, time: timeMode, val: habit.defaultVal });
-        setTimeout(() => setLastLogged(null), 3500);
     };
 
-    const resetLogs = () => {
-        setHabits(DEFAULT_HABITS);
-        setLastLogged(null);
+    const handleSave = () => {
+        const moodObj = MOOD_OPTIONS.find((m) => m.value === selectedMood);
+        const activityLabels = selectedActivities
+            .map((id) => DEFAULT_ACTIVITIES.find((a) => a.id === id)?.label)
+            .filter(Boolean);
+
+        setSavedState({
+            mood: moodObj?.label || 'Recorded',
+            emoji: moodObj?.emoji || '✓',
+            activities: activityLabels.length > 0 ? activityLabels.join(', ') : 'No activities',
+            time: timeMode,
+        });
+
+        setTimeout(() => setSavedState(null), 4000);
+    };
+
+    const resetDemo = () => {
+        setSelectedMood(4);
+        setSelectedActivities(['exercise', 'coffee']);
+        setSavedState(null);
+    };
+
+    const fillRoutine = () => {
+        setSelectedMood(4);
+        setSelectedActivities(['exercise', 'friends', 'coffee']);
+        setSavedState(null);
     };
 
     return (
@@ -48,14 +74,12 @@ const Hero = () => {
                     </div>
 
                     <h1 className={classes.title}>
-                        Life & Habit Tracking, <br />
-                        <span className={classes.titleGradient}>Rooted in Truth.</span>
+                        Find out what <br />
+                        <span className={classes.titleGradient}>really affects your mood.</span>
                     </h1>
 
                     <p className={classes.lead}>
-                        A privacy-first personal tracker built around three core pillars: 
-                        <strong> 1-tap rapid logging</strong>, <strong>visual momentum heatmaps</strong>, and <strong>on-device statistical discovery</strong>. 
-                        Zero accounts. Zero internet permissions. 100% on your phone.
+                        Check in once a day: rate your mood and tick what happened. Nomos compares your better and worse days with honest statistics and shows what goes with each. Zero accounts. Zero internet permissions. 100% on your phone.
                     </p>
 
                     <div className={classes.ctaRow}>
@@ -83,16 +107,16 @@ const Hero = () => {
                         </div>
                         <div className={classes.guaranteeItem}>
                             <FiCheck className={classes.gIconCyan} />
-                            <span>AES-256-GCM Backups</span>
+                            <span>Daily mood check-in</span>
                         </div>
                         <div className={classes.guaranteeItem}>
                             <FiAward className={classes.gIconGold} />
-                            <span>N-of-1 Personal Trials</span>
+                            <span>Honest statistics</span>
                         </div>
                     </div>
                 </div>
 
-                {/* Interactive Simulator Column */}
+                {/* Interactive Check-in Simulator Column */}
                 <div className={classes.simCol}>
                     <div className={classes.phoneFrame}>
                         <div className={classes.phoneHeader}>
@@ -112,7 +136,7 @@ const Hero = () => {
                                 </div>
                                 <div>
                                     <div className={classes.appName}>Nomos</div>
-                                    <div className={classes.appSub}>Interactive 1-Tap Sandbox</div>
+                                    <div className={classes.appSub}>Daily Mood Check-in</div>
                                 </div>
                             </div>
                             <div className={classes.statusPill}>100% Offline</div>
@@ -132,55 +156,87 @@ const Hero = () => {
                             ))}
                         </div>
 
-                        {/* Habit Cards */}
-                        <div className={classes.cardsList}>
-                            {habits.map((h) => (
-                                <div
-                                    key={h.id}
-                                    className={`${classes.habitCard} ${h.logged ? classes.habitCardLogged : ''}`}
-                                >
-                                    <div className={classes.habitIcon} style={{ background: `${h.color}24`, color: h.color }}>
-                                        {h.icon}
-                                    </div>
-                                    <div className={classes.habitInfo}>
-                                        <div className={classes.habitName}>{h.name}</div>
-                                        <div className={classes.habitMeta}>
-                                            <span className={classes.habitDefault}>⚡ {h.defaultVal}</span>
-                                            <span className={classes.habitDot}>•</span>
-                                            <span className={classes.habitStreak}>{h.streak} streak</span>
-                                        </div>
-                                    </div>
-                                    <button
-                                        className={`${classes.logBtn} ${h.logged ? classes.logBtnLogged : ''}`}
-                                        onClick={() => handleLog(h.id)}
-                                        disabled={h.logged}
-                                        style={{ '--accent-color': h.color }}
-                                    >
-                                        {h.logged ? (
-                                            <>
-                                                <FiCheck size={14} /> Logged
-                                            </>
-                                        ) : (
-                                            <>⚡ 1-Tap</>
-                                        )}
-                                    </button>
-                                </div>
-                            ))}
+                        {/* Mood Faces Row */}
+                        <div className={classes.moodSection}>
+                            <div className={classes.moodSectionLabel}>
+                                <FiSmile size={13} />
+                                <span>Rate your mood today</span>
+                            </div>
+                            <div className={classes.moodFacesRow}>
+                                {MOOD_OPTIONS.map((m) => {
+                                    const isSelected = selectedMood === m.value;
+                                    return (
+                                        <button
+                                            key={m.value}
+                                            className={`${classes.moodFaceBtn} ${isSelected ? classes.moodFaceSelected : ''}`}
+                                            onClick={() => setSelectedMood(m.value)}
+                                            style={{ '--mood-color': m.color }}
+                                            type="button"
+                                            aria-label={`${m.label} mood`}
+                                        >
+                                            <span className={classes.moodEmoji}>{m.emoji}</span>
+                                            <span className={classes.moodFaceLabel}>{m.label}</span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Activity Chips Grid */}
+                        <div className={classes.activitySection}>
+                            <div className={classes.activitySectionHeader}>
+                                <span className={classes.activitySectionLabel}>Tick what happened</span>
+                                <button type="button" className={classes.routineLink} onClick={fillRoutine}>
+                                    Same as yesterday
+                                </button>
+                            </div>
+                            <div className={classes.chipsGrid}>
+                                {DEFAULT_ACTIVITIES.map((a) => {
+                                    const isChecked = selectedActivities.includes(a.id);
+                                    return (
+                                        <button
+                                            key={a.id}
+                                            type="button"
+                                            className={`${classes.activityChip} ${isChecked ? classes.activityChipChecked : ''}`}
+                                            onClick={() => toggleActivity(a.id)}
+                                        >
+                                            <span className={classes.activityIcon}>{a.icon}</span>
+                                            <span className={classes.activityName}>{a.label}</span>
+                                            {isChecked && <FiCheck className={classes.activityCheck} />}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Save Check-in Button */}
+                        <div className={classes.actionRow}>
+                            <button
+                                type="button"
+                                className={classes.saveCheckinBtn}
+                                onClick={handleSave}
+                            >
+                                <FiCheck size={16} />
+                                <span>Save Check-in</span>
+                            </button>
                         </div>
 
                         {/* Toast Feedback */}
-                        {lastLogged && (
+                        {savedState && (
                             <div className={classes.simToast}>
-                                <FiCheck className={classes.toastIcon} />
-                                <span>Logged <strong>{lastLogged.name}</strong> ({lastLogged.val}) for <em>{lastLogged.time}</em></span>
+                                <span className={classes.toastEmoji}>{savedState.emoji}</span>
+                                <div className={classes.toastText}>
+                                    <div><strong>{savedState.mood}</strong> saved for <em>{savedState.time}</em></div>
+                                    <div className={classes.toastSub}>{savedState.activities} · 0 data uploaded</div>
+                                </div>
                             </div>
                         )}
 
                         <div className={classes.simFooter}>
-                            <button className={classes.resetBtn} onClick={resetLogs}>
+                            <button className={classes.resetBtn} onClick={resetDemo}>
                                 Reset Demo
                             </button>
-                            <span className={classes.simNote}>Tap any habit to test 1-tap logging</span>
+                            <span className={classes.simNote}>Tap faces & activities to test check-in</span>
                         </div>
                     </div>
                 </div>
@@ -190,3 +246,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
