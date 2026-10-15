@@ -54,11 +54,11 @@ export const routesMeta = [
   {
     path: 'nomos/privacy',
     title: 'Smerio Nomos — Privacy Policy | Zero Trackers, 0 Internet Permissions',
-    description: 'Privacy Policy for Smerio Nomos Android app. Zero network permissions requested, zero trackers, and hardware-backed AES-256-GCM local encryption.',
+    description: 'Privacy Policy for Smerio Nomos Android app. Zero network permissions requested, zero trackers, and password-protected AES-256-GCM backups.',
     keywords: 'Smerio Nomos privacy policy, zero network permissions, zero trackers, 100% on-device habit logging, AES-256 local encryption, Google Play privacy policy',
     canonical: 'https://smer.io/nomos/privacy',
     ogTitle: 'Smerio Nomos — Privacy Policy (Android)',
-    ogDescription: '0 internet permissions requested, zero trackers, and hardware-backed AES-256-GCM encryption on Android.',
+    ogDescription: '0 internet permissions requested, zero trackers, and password-protected AES-256-GCM backups on Android.',
     ogImage: 'https://smer.io/nomos/feature-graphic-B.png',
     ogUrl: 'https://smer.io/nomos/privacy',
     twitterTitle: 'Smerio Nomos — Privacy Policy',

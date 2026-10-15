@@ -1,7 +1,10 @@
 import classes from './Footer.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const location = useLocation();
+    const isNomos = location.pathname.startsWith('/nomos');
+
     return (
         <footer className={classes.footer}>
             <div className={classes.container}>
@@ -14,7 +17,9 @@ const Footer = () => {
                     <Link to="/ambit#privacy">Ambit Privacy</Link>
                     <Link to="/docs">Documentation</Link>
                     <a href="https://github.com/smerio/smerio" target="_blank" rel="noreferrer">GitHub</a>
-                    <a href="https://github.com/smerio/smerio/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
+                    {!isNomos && (
+                        <a href="https://github.com/smerio/smerio/blob/main/LICENSE" target="_blank" rel="noreferrer">License (AGPLv3)</a>
+                    )}
                 </div>
                 &copy; {new Date().getFullYear()} Smerio.
             </div>

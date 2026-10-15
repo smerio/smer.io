@@ -54,7 +54,7 @@ const Hero = () => {
 
                     <p className={classes.lead}>
                         A privacy-first personal tracker built around three core pillars: 
-                        <strong> 1-tap rapid logging</strong>, <strong>visual momentum heatmaps</strong>, and <strong>on-device statistical causal discovery</strong>. 
+                        <strong> 1-tap rapid logging</strong>, <strong>visual momentum heatmaps</strong>, and <strong>on-device statistical discovery</strong>. 
                         Zero accounts. Zero internet permissions. 100% on your phone.
                     </p>
 

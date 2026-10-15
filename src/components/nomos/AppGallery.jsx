@@ -111,7 +111,7 @@ const ALL_SCREENSHOTS = [
     {
         id: 'privacy',
         title: '100% On-Device Sovereignty & Portability',
-        subtitle: 'Zero network permissions requested, hardware-backed AES-256-GCM encryption, and one-tap Loop Habits import.',
+        subtitle: 'Zero network permissions requested, password-protected AES-256-GCM backups, and one-tap Loop Habits import.',
         src: '/nomos/screenshot-8-privacy.png',
         tag: 'Privacy Settings',
         accent: '#10B981',
