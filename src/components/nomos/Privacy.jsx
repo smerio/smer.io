@@ -11,7 +11,7 @@ const Privacy = () => {
                         <span>Google Play Store Compliant</span>
                     </div>
                     <h2 className={classes.title}>Privacy Policy</h2>
-                    <p className={classes.effectiveDate}>Last updated: 15 October 2026</p>
+                    <p className={classes.effectiveDate}>Last updated: 21 October 2026</p>
                     <p className={classes.lead}>
                         Smerio Nomos is engineered from the ground up as a <strong>100% local-first, zero-telemetry mood and habit tracker</strong>. 
                         We believe that your personal routines, daily symptoms, statistical patterns, and lifestyle experiments belong solely to you.
@@ -80,6 +80,14 @@ const Privacy = () => {
                                         <td>Daily check-in and goal reminders, logging confirmations with Undo.</td>
                                     </tr>
                                     <tr>
+                                        <td><strong>Read steps</strong> (<code>android.permission.health.READ_STEPS</code>)</td>
+                                        <td>Optional. Shows your daily steps from Health Connect, if you connect it.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Read sleep</strong> (<code>android.permission.health.READ_SLEEP</code>)</td>
+                                        <td>Optional. Shows how long you slept each night from Health Connect, if you connect it.</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>Biometric / fingerprint</strong> (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>)</td>
                                         <td>Optional app lock. Handled by Android; Nomos never sees your biometric data.</td>
                                     </tr>
@@ -101,7 +109,7 @@ const Privacy = () => {
                             All your habits, logged entries, modular attributes, and N-of-1 trial histories are saved strictly within your phone&apos;s sandboxed local Room/SQLite database.
                         </p>
                         <p>
-                            This can include sensitive personal information you choose to record, such as mood ratings, symptoms, sleep, medication or alcohol use. It is treated exactly like everything else: stored only on your phone and never sent to us.
+                            This can include sensitive personal information you choose to record, such as mood ratings, symptoms, sleep, medication or alcohol use, and, if you connect Health Connect, your daily steps and sleep. It is treated exactly like everything else: stored only on your phone and never sent to us.
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <strong>AES-256-GCM Encrypted Snapshots:</strong> When creating a backup, Nomos encrypts your entire database using AES-256-GCM authenticated encryption with a user-supplied password.</li>
@@ -116,7 +124,39 @@ const Privacy = () => {
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>5. Third-Party Services &amp; Analytics</h3>
+                        <h3>5. Health Connect (Steps and Sleep)</h3>
+                        <p>
+                            If you choose to connect Health Connect, Nomos reads two kinds of data from it:
+                        </p>
+                        <ul className={classes.list}>
+                            <li><FiCheck className={classes.checkIcon} /> <strong>Steps:</strong> your total number of steps for each day.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <strong>Sleep:</strong> your sleep sessions (when you fell asleep and woke up, and when you were awake during the night), which Nomos turns into the time you slept each night.</li>
+                        </ul>
+                        <p>
+                            Nomos does not read any other Health Connect data, and it never writes, changes or deletes data in Health Connect.
+                        </p>
+                        <p>
+                            <strong>How it&apos;s used.</strong> Steps and sleep appear as trackers in Nomos, next to the moods and habits you log yourself. Nomos uses them for your goals, your Trends, and to compare your mood on days with more or fewer steps, and after longer or shorter nights, than usual. This all happens on your phone.
+                        </p>
+                        <p>
+                            <strong>Where it goes.</strong> Nowhere. Nomos has no internet access, so this data is never sent to us or anyone else. It is never sold, never shared, and never used for advertising.
+                        </p>
+                        <p>
+                            <strong>When it&apos;s read.</strong> Only while Nomos is open on your screen. Nomos never reads in the background. When you first connect, it reads your last 30 days.
+                        </p>
+                        <p>
+                            <strong>Backups.</strong> The days Nomos has read are stored in Nomos&apos;s own database on your phone. That means they are included in backups you make yourself (encrypted with your password) and in Android&apos;s own backup if you have turned that on (see &ldquo;Android Auto Backup &amp; device transfer&rdquo;).
+                        </p>
+                        <p>
+                            <strong>Stopping.</strong> You can turn access off at any time in Health Connect (search for &ldquo;Health Connect&rdquo; in your phone&apos;s Settings, or open the Health Connect app on older phones), or choose <strong>Stop reading from Health Connect</strong> on the tracker in Nomos. There you can keep the days already read or delete them. Health Connect keeps its own copy either way.
+                        </p>
+                        <div className={classes.noticeBox}>
+                            Nomos&apos;s use of information received from Health Connect adheres to the Health Connect Permissions policy, including the Limited Use requirements.
+                        </div>
+                    </div>
+
+                    <div className={classes.clause}>
+                        <h3>6. Third-Party Services &amp; Analytics</h3>
                         <p>
                             Smerio Nomos contains <strong>zero third-party SDKs, analytics frameworks, or advertising networks</strong>. 
                             There is no Google Firebase Analytics, Meta SDK, Mixpanel, Sentry, or third-party telemetry bundled into the application.
@@ -124,26 +164,27 @@ const Privacy = () => {
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>6. Data Retention, Portability &amp; User Rights</h3>
+                        <h3>7. Data Retention, Portability &amp; User Rights</h3>
                         <p>
                             Because your data is stored exclusively on your physical device, you maintain full, unrestricted data sovereignty:
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Export Anytime:</strong> You can export your full database to plain JSON or standard CSV spreadsheets at any time.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <strong>Health Connect Data:</strong> On the Steps or Sleep tracker, choose <strong>Stop reading from Health Connect &rarr; Delete them</strong> to remove the days Nomos has read. To remove the data from Health Connect itself, use the Health Connect settings or the app that recorded it.</li>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → <strong>S Nomos</strong> → Clear storage.</li>
                             <li><FiCheck className={classes.checkIcon} /> <strong>Permanent Deletion:</strong> Uninstalling the application immediately and irreversibly deletes all stored logs and local settings.</li>
                         </ul>
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>7. Children&apos;s Privacy (COPPA &amp; GDPR-K)</h3>
+                        <h3>8. Children&apos;s Privacy (COPPA &amp; GDPR-K)</h3>
                         <p>
                             Nomos does not knowingly collect or solicit any personal information from children under the age of 13 (or 16 in the European Economic Area). Because the app collects no personal information whatsoever from any user, it is fully compliant with COPPA and GDPR-K.
                         </p>
                     </div>
 
                     <div className={classes.clause}>
-                        <h3>8. Google Play Store Declarations &amp; Contact</h3>
+                        <h3>9. Google Play Store Declarations &amp; Contact</h3>
                         <p>
                             For the Google Play Store Data Safety form declarations:
                         </p>
