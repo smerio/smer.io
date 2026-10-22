@@ -11,9 +11,21 @@ const MOOD_FACTORS = [
 ];
 
 const TRIAL_STEPS = [
-    { phase: 'Phase 1: Elimination', days: 'Days 1–7', desc: 'Completely eliminate suspected trigger (e.g. Late Alcohol) from your evening routine.', status: 'Done' },
-    { phase: 'Phase 2: Reintroduction', days: 'Days 8–14', desc: 'Reintroduce habit in controlled quantity to measure symptom recurrence.', status: 'Active' },
-    { phase: 'Automated Verdict', days: 'Day 15', desc: 'A chi-square test checks whether the difference between the two phases (relative risk ≥ 1.8) is statistically significant.', status: 'Pending' },
+    {
+        phase: 'Step 1 · Without it',
+        days: '1–4 weeks',
+        desc: 'Skip the suspect, for example late coffee. Log how you feel as usual (sized to how often you usually do it).',
+    },
+    {
+        phase: 'Step 2 · With it',
+        days: 'The same length',
+        desc: 'Do it as you usually do, no more than usual. Log it each time.',
+    },
+    {
+        phase: 'Step 3 · Result',
+        days: 'Min. 4 days',
+        desc: 'Nomos compares your mood or symptom on the days you did it with the days without it. It needs at least 4 such days.',
+    },
 ];
 
 const CausalEngine = () => {
@@ -86,12 +98,17 @@ const CausalEngine = () => {
                                 </div>
                                 <div>
                                     <h3 className={classes.trialTitle}>Test a suspicion with a personal trial</h3>
-                                    <span className={classes.trialSub}>2-Phase N-of-1 Experiment</span>
+                                    <a
+                                        href="/nomos/discoveries/#personal-trials"
+                                        className={classes.trialBadgeLink}
+                                    >
+                                        Personal trial &rarr;
+                                    </a>
                                 </div>
                             </div>
 
                             <p className={classes.trialIntro}>
-                                Stop a suspect for a week, bring it back for a week, and see the difference.
+                                Skip it for a while, then do it as you usually do, and compare the days.
                             </p>
 
                             <div className={classes.stepper}>
@@ -118,25 +135,25 @@ const CausalEngine = () => {
                             {/* Live Interactive Verdict Simulation */}
                             <div className={classes.verdictCard}>
                                 <div className={classes.verdictTop}>
-                                    <span className={classes.verdictBadge}>🎯 STATISTICAL VERDICT</span>
-                                    <span className={classes.verdictRisk}>Relative Risk: RR = 2.4</span>
+                                    <span className={classes.verdictBadge}>🎯 EXAMPLE RESULT</span>
+                                    <span className={classes.verdictRisk}>−0.7 points</span>
                                 </div>
                                 <div className={classes.verdictBody}>
-                                    <strong>Clear difference found:</strong> Reintroducing the habit in Phase 2 triggered a 2.4x statistically significant recurrence rate (chi-square p = 0.002).
+                                    <strong>LIKELY WORSE:</strong> On late-coffee days your mood the day after averaged 3.1, on days without it 3.8 (−0.7).
                                 </div>
                                 <div className={classes.verdictFooter}>
                                     <button
                                         className={classes.phaseAdvanceBtn}
                                         onClick={() => setActiveTrialPhase((p) => (p + 1) % 3)}
                                     >
-                                        <span>Next Protocol Stage</span>
+                                        <span>Next Step</span>
                                         <FiArrowRight />
                                     </button>
                                 </div>
                             </div>
 
                             <p className={classes.trialScopeNote}>
-                                *Trials currently work for yes/no outcomes such as symptoms; mood-rating trials are coming.
+                                *Trials start from a pattern card in Discoveries. Rating cards such as &quot;Alcohol ➔ Mood&quot; don&apos;t offer one yet.
                             </p>
                         </div>
                     </div>

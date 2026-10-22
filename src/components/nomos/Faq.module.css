@@ -106,3 +106,14 @@
     line-height: 1.65;
     color: #A3A3A3;
 }
+
+.faqAnswer a {
+    color: #34D399;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+}
+
+.faqAnswer a:hover {
+    color: #10B981;
+}

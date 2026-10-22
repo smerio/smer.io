@@ -229,6 +229,25 @@
     margin: 0;
 }
 
+.trialBadgeLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #34D399;
+    text-decoration: none;
+    margin-top: 0.25rem;
+    transition: color 0.15s ease;
+}
+
+.trialBadgeLink:hover {
+    color: #10B981;
+    text-decoration: underline;
+}
+
 .trialSub {
     font-size: 0.8rem;
     color: #8A8A8A;
