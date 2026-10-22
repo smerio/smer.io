@@ -199,7 +199,7 @@ const NomosDiscoveries = () => {
                                 <strong>Example:</strong> "Late dinner ➔ Reflux: reflux rises from 18% to 47% on days after a late dinner."
                             </div>
                             <p className={classes.paragraph}>
-                                <strong>Next step:</strong> tap <em>Test as N-of-1 trial</em> to verify the relationship with a controlled elimination trial.
+                                <strong>Next step:</strong> tap <em>Test as N-of-1 trial</em> to verify the relationship with a personal trial.
                             </p>
                         </div>
 
@@ -343,30 +343,82 @@ const NomosDiscoveries = () => {
                     <section id="personal-trials" className={classes.section}>
                         <h2 className={classes.sectionTitle}>N-of-1 personal trials</h2>
                         <p className={classes.paragraph}>
-                            A personal trial (an "N-of-1" scientific study: one person, you) tests whether a suspected trigger genuinely influences an outcome <strong>for you</strong>.
+                            A personal trial (an &quot;N-of-1&quot; study: one person, you) tests whether something you do really affects how you feel, <strong>for you</strong>.
                         </p>
                         <p className={classes.paragraph}>
-                            <strong>How to start:</strong> on a Discovery card that links two trackers, tap <strong>Test as N-of-1 trial</strong>. The button appears on time-lagged, high-confidence, and exploratory cards. It is not shown on routine stacks, symptom co-occurrences, mediated confounders, or attribute-level drivers.
+                            <strong>How to start:</strong> on a Discovery card that links two trackers, tap <strong>Test as N-of-1 trial</strong>. The button appears on time-lagged, high-confidence and exploratory cards. It doesn&apos;t appear on routine stacks, symptom co-occurrences, mediated confounders, attribute-level drivers or rating cards such as &quot;Alcohol ➔ Mood&quot;.
+                        </p>
+                        <p className={classes.paragraph}>
+                            <strong>It follows your usual rhythm.</strong> Before you start, Nomos shows how often you&apos;ve done it over the last 8 weeks, for example &quot;about 3 times a week&quot;, and you can correct it. The trial is sized to that rhythm so you never have to change your routine to take part:
+                        </p>
+
+                        <div className={classes.tableWrapper}>
+                            <table className={classes.table}>
+                                <thead>
+                                    <tr>
+                                        <th>You usually do it</th>
+                                        <th>Each phase lasts</th>
+                                        <th>Whole trial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Every day, or 5 times a week</td>
+                                        <td>1 week</td>
+                                        <td>2 weeks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3 times a week</td>
+                                        <td>2 weeks</td>
+                                        <td>4 weeks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Twice a week</td>
+                                        <td>3 weeks</td>
+                                        <td>6 weeks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Once a week</td>
+                                        <td>4 weeks</td>
+                                        <td>8 weeks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Every 2 weeks or less</td>
+                                        <td>—</td>
+                                        <td>Too rare for a trial</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className={classes.paragraph}>
+                            Something you do less than once a week can&apos;t be tested this way: four weeks would hold about two sessions. Discoveries keeps comparing it as you log.
                         </p>
                         <p className={classes.paragraph}>
                             <strong>How it runs:</strong>
                         </p>
                         <ol className={classes.stepList}>
                             <li className={classes.stepItem}>
-                                <strong>Phase 1, Elimination (7 days):</strong> avoid the trigger completely and continue logging the outcome. This establishes your clean baseline rate.
+                                <strong>Without it:</strong> skip it, and keep logging how you feel as usual. This is your baseline.
                             </li>
                             <li className={classes.stepItem}>
-                                <strong>Phase 2, Reintroduction (7 days):</strong> resume the trigger and continue logging. Does the outcome increase or return?
+                                <strong>With it:</strong> do it <strong>as you usually do</strong>, about as often as before. There&apos;s no need to do more, and please don&apos;t force it: doing something every day just for the trial can change your mood on its own. Log it each time you do it.
                             </li>
                         </ol>
                         <p className={classes.paragraph}>
-                            The trial card displays "Day N of …", the number of events recorded in each phase, and days tracked. You can tap <strong>Advance to Phase 2</strong> early if needed: the transition date adjusts to that moment and Phase 2 will still run for a full 7 days. When complete, tap <strong>Finalize trial verdict</strong>. You may cancel an active trial at any time.
+                            <strong>What gets compared:</strong> your outcome (for example your Mood rating) <strong>on the days you did it</strong>, against the days of &quot;Without it&quot;. The days in &quot;With it&quot; when you didn&apos;t do it are left out, because they say nothing about the effect. If Discoveries found that the effect shows up <strong>the day after</strong> (like alcohol and next-day mood), the trial reads the day after instead.
                         </p>
                         <p className={classes.paragraph}>
-                            <strong>What makes a result fair:</strong> both phases share identical duration; logs from before you started the trial are excluded; outcome rates are computed per day and displayed normalized per week.
+                            <strong>When there&apos;s enough:</strong> a result needs at least <strong>4 days you did it with a rating</strong> (or with a log, for symptoms), the same minimum Discoveries uses. If &quot;With it&quot; ends with fewer, the card offers <strong>Add a week</strong>: the trial runs a week longer and the days you already logged still count.
+                        </p>
+                        <p className={classes.paragraph}>
+                            <strong>Slips are fine.</strong> If you do it once during &quot;Without it&quot;, that day is simply left out. More than one slip a week of &quot;Without it&quot; and the trial can&apos;t give a fair answer.
+                        </p>
+                        <p className={classes.paragraph}>
+                            <strong>On the card:</strong> &quot;Without it&quot; and &quot;Days you did it&quot; side by side, how many days each rests on, and a strip of the &quot;With it&quot; days with the days you did it filled in. You can start &quot;With it&quot; early, end the trial early, or cancel it at any time. When it&apos;s over, tap <strong>Save the result</strong>.
                         </p>
                         <div className={classes.exampleBox}>
-                            <strong>Execution tips:</strong> keep lifestyle variables as consistent as possible (sleep, alcohol, stress). Log the outcome every time it occurs, and log the trigger honestly—including accidental slips. If the outcome is rare (less than once per week), consider running an extended trial.
+                            <strong>Tips:</strong> keep everything else as steady as you can (sleep, alcohol, stress). Log your mood or the outcome every day, including ordinary days, and log the thing you&apos;re testing honestly, including slips.
                         </div>
                     </section>
 
@@ -374,14 +426,18 @@ const NomosDiscoveries = () => {
                     <section id="trial-verdicts" className={classes.section}>
                         <h2 className={classes.sectionTitle}>What trial results mean</h2>
                         <p className={classes.paragraph}>
-                            During a trial, Nomos tracks your progress, and once finalized, evaluates event rates across both phases to determine your verdict:
+                            When a trial ends, its card shows one of these labels.
+                        </p>
+
+                        <p className={classes.paragraph}>
+                            <strong>For a rating (Mood, Energy, Sleep quality):</strong>
                         </p>
 
                         <div className={classes.tableWrapper}>
                             <table className={classes.table}>
                                 <thead>
                                     <tr>
-                                        <th>Result</th>
+                                        <th>Label</th>
                                         <th>When it appears</th>
                                         <th>What to do</th>
                                     </tr>
@@ -389,52 +445,87 @@ const NomosDiscoveries = () => {
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <span className={classes.verdictBadge}>Causal link supported (strong signal)</span>
+                                            <span className={classes.verdictBadge}>Likely better</span> / <span className={classes.verdictBadge}>Likely worse</span>
                                         </td>
-                                        <td>The outcome happened clearly more often during Reintroduction: at least 1.8× the Elimination rate, and at least 3 events in Phase 2.</td>
-                                        <td>Strong evidence for <em>you</em>. Consider avoiding the trigger; repeat the trial later to confirm.</td>
+                                        <td>On the days you did it, your rating was clearly different from the days without it: at least 0.4 points, with the same checks Discoveries uses for &quot;Likely&quot;.</td>
+                                        <td>Good evidence <em>for you</em>. Keep doing it (or cut back), and repeat the trial later to confirm.</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span className={classes.verdictBadge}>Spurious correlation disproven</span>
+                                            <span className={classes.verdictBadge}>No clear effect</span>
                                         </td>
-                                        <td>The rates in the two phases were nearly the same (within 15%), with at least 2 events in each phase.</td>
-                                        <td>The original pattern was probably coincidence.</td>
+                                        <td>The averages differ by less than 0.25 points.</td>
+                                        <td>It probably doesn&apos;t move your rating much.</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span className={classes.verdictBadge}>Outcome decreased during reintroduction</span>
+                                            <span className={classes.verdictBadge}>Mixed</span>
                                         </td>
-                                        <td>The outcome went <em>down</em> when you resumed the trigger.</td>
-                                        <td>This can't confirm or rule out a cause. Check sleep and stress, or run a longer trial.</td>
+                                        <td>There&apos;s a difference, but it isn&apos;t clear enough.</td>
+                                        <td>More days would help: run the trial again later.</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span className={classes.verdictBadge}>No outcome events</span>
+                                            <span className={classes.verdictBadge}>Can&apos;t tell yet</span>
                                         </td>
-                                        <td>The outcome never happened in either phase.</td>
-                                        <td>The trigger probably wasn't the main driver in this period.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span className={classes.verdictBadge}>Mixed results</span>
-                                        </td>
-                                        <td>Anything in between the thresholds above.</td>
-                                        <td>Run a longer trial or check for confounders.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span className={classes.verdictBadge}>Still in progress</span>
-                                        </td>
-                                        <td>Phase 2 isn't finished yet.</td>
-                                        <td>Keep logging.</td>
+                                        <td>Fewer than 4 days you did it with a rating, or more than one slip a week of &quot;Without it&quot;.</td>
+                                        <td>Add a week if offered, or start a new trial.</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <p className={classes.paragraph}>
-                            The wording is deliberate: a personal trial provides <em>supporting</em> evidence, not clinical proof.
+                            <strong>For a symptom (Headache, Reflux):</strong>
+                        </p>
+
+                        <div className={classes.tableWrapper}>
+                            <table className={classes.table}>
+                                <thead>
+                                    <tr>
+                                        <th>Label</th>
+                                        <th>When it appears</th>
+                                        <th>What to do</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span className={classes.verdictBadge}>Likely a trigger</span>
+                                        </td>
+                                        <td>On the days you did it, the symptom came clearly more often: at least 1.8 times as often per day as without it, and at least 3 times in total.</td>
+                                        <td>Strong evidence <em>for you</em>. Consider avoiding it; repeat the trial later to confirm.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className={classes.verdictBadge}>No clear effect</span>
+                                        </td>
+                                        <td>The symptom came about as often (within 15%), at least twice on each side.</td>
+                                        <td>The original pattern was probably coincidence.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className={classes.verdictBadge}>Mixed</span>
+                                        </td>
+                                        <td>Anything in between, including when the symptom came <em>less</em> often on the days you did it (that can&apos;t confirm or rule out a cause).</td>
+                                        <td>Check sleep and stress, or run the trial again.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span className={classes.verdictBadge}>Can&apos;t tell yet</span>
+                                        </td>
+                                        <td>Fewer than 4 days you did it with any log, or more than one slip a week.</td>
+                                        <td>Add a week if offered, or start a new trial.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className={classes.paragraph}>
+                            While the trial runs, the card explains what it still needs, for example &quot;2 more Playing music days with a Mood rating and the trial can compare.&quot;
+                        </p>
+                        <p className={classes.paragraph}>
+                            The wording is deliberate: a personal trial gives <em>supporting</em> evidence, not medical proof.
                         </p>
                     </section>
 
@@ -513,7 +604,27 @@ const NomosDiscoveries = () => {
                                 <FiChevronDown />
                             </summary>
                             <div className={classes.faqAnswer}>
-                                Personal trials require two separate trackers with an asymmetric, directional relationship. Routine stacks, symptom co-occurrences, confounded patterns, and single-tracker attribute drivers do not qualify for trial testing.
+                                Trials need two separate trackers and a direction. Routine stacks, symptom co-occurrences, confounded patterns and rating cards (such as &quot;Alcohol ➔ Mood&quot;) don&apos;t have one yet.
+                            </div>
+                        </details>
+
+                        <details className={classes.faqItem}>
+                            <summary className={classes.faqSummary}>
+                                <span>Do I have to do it every day during a trial?</span>
+                                <FiChevronDown />
+                            </summary>
+                            <div className={classes.faqAnswer}>
+                                No. In &quot;With it&quot;, do it as you usually do. The trial compares the days you did it with the days without it, and it&apos;s sized to your rhythm: a weekly practice gets four weeks per phase.
+                            </div>
+                        </details>
+
+                        <details className={classes.faqItem}>
+                            <summary className={classes.faqSummary}>
+                                <span>My trial says &quot;Can&apos;t tell yet&quot;. Did I do something wrong?</span>
+                                <FiChevronDown />
+                            </summary>
+                            <div className={classes.faqAnswer}>
+                                Usually it just needs more days: at least 4 days you did it, with a rating or a log. Tap <strong>Add a week</strong>; nothing you logged is lost.
                             </div>
                         </details>
 
