@@ -139,6 +139,11 @@
     color: #D4D4D4;
 }
 
+.list li span {
+    flex: 1;
+    min-width: 0;
+}
+
 .checkIcon {
     color: #10B981;
     font-size: 1.1rem;

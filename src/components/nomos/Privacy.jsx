@@ -43,10 +43,10 @@ const Privacy = () => {
                             Smerio Nomos does not harvest, store, or transmit any personally identifiable information (PII) or device metadata. Specifically, we do not collect:
                         </p>
                         <ul className={classes.list}>
-                            <li><FiCheck className={classes.checkIcon} /> Names, email addresses, phone numbers, or account credentials.</li>
-                            <li><FiCheck className={classes.checkIcon} /> Advertising IDs (AAID), hardware identifiers (IMEI, MAC address), or device fingerprints.</li>
-                            <li><FiCheck className={classes.checkIcon} /> GPS location, WiFi identifiers, or network telemetry.</li>
-                            <li><FiCheck className={classes.checkIcon} /> In-app behavioral telemetry, click tracking, or usage statistics.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <span>Names, email addresses, phone numbers, or account credentials.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span>Advertising IDs (AAID), hardware identifiers (IMEI, MAC address), or device fingerprints.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span>GPS location, WiFi identifiers, or network telemetry.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span>In-app behavioral telemetry, click tracking, or usage statistics.</span></li>
                         </ul>
                     </div>
 
@@ -112,8 +112,8 @@ const Privacy = () => {
                             This can include sensitive personal information you choose to record, such as mood ratings, symptoms, sleep, medication or alcohol use, and, if you connect Health Connect, your daily steps and sleep. It is treated exactly like everything else: stored only on your phone and never sent to us.
                         </p>
                         <ul className={classes.list}>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>AES-256-GCM Encrypted Snapshots:</strong> When creating a backup, Nomos encrypts your entire database using AES-256-GCM authenticated encryption with a user-supplied password.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Storage Access Framework (SAF):</strong> Export and import operations rely solely on system-level file pickers without requiring broad file storage permissions.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>AES-256-GCM Encrypted Snapshots:</strong> When creating a backup, Nomos encrypts your entire database using AES-256-GCM authenticated encryption with a user-supplied password.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Storage Access Framework (SAF):</strong> Export and import operations rely solely on system-level file pickers without requiring broad file storage permissions.</span></li>
                         </ul>
                         <div className={classes.subClause}>
                             <h4>Android Auto Backup &amp; device transfer</h4>
@@ -129,8 +129,8 @@ const Privacy = () => {
                             If you choose to connect Health Connect, Nomos reads two kinds of data from it:
                         </p>
                         <ul className={classes.list}>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Steps:</strong> your total number of steps for each day.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Sleep:</strong> your sleep sessions (when you fell asleep and woke up, and when you were awake during the night), which Nomos turns into the time you slept each night.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Steps:</strong> your total number of steps for each day.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Sleep:</strong> your sleep sessions (when you fell asleep and woke up, and when you were awake during the night), which Nomos turns into the time you slept each night.</span></li>
                         </ul>
                         <p>
                             Nomos does not read any other Health Connect data, and it never writes, changes or deletes data in Health Connect.
@@ -169,10 +169,10 @@ const Privacy = () => {
                             Because your data is stored exclusively on your physical device, you maintain full, unrestricted data sovereignty:
                         </p>
                         <ul className={classes.list}>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Export Anytime:</strong> You can export your full database to plain JSON or standard CSV spreadsheets at any time.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Health Connect Data:</strong> On the Steps or Sleep tracker, choose <strong>Stop reading from Health Connect &rarr; Delete them</strong> to remove the days Nomos has read. To remove the data from Health Connect itself, use the Health Connect settings or the app that recorded it.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → <strong>S Nomos</strong> → Clear storage.</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Permanent Deletion:</strong> Uninstalling the application immediately and irreversibly deletes all stored logs and local settings.</li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Export Anytime:</strong> You can export your full database to plain JSON or standard CSV spreadsheets at any time.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Health Connect Data:</strong> On the Steps or Sleep tracker, choose <strong>Stop reading from Health Connect &rarr; Delete them</strong> to remove the days Nomos has read. To remove the data from Health Connect itself, use the Health Connect settings or the app that recorded it.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Erase Data:</strong> Delete individual entries or trackers in the app, or erase everything at once in <strong>Settings → Data &amp; backup → Erase all data</strong>. You can also use Android Settings → Apps → <strong>S Nomos</strong> → Clear storage.</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Permanent Deletion:</strong> Uninstalling the application immediately and irreversibly deletes all stored logs and local settings.</span></li>
                         </ul>
                     </div>
 
@@ -189,9 +189,9 @@ const Privacy = () => {
                             For the Google Play Store Data Safety form declarations:
                         </p>
                         <ul className={classes.list}>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Data Collected:</strong> None (0 bytes transmitted).</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Data Shared:</strong> None (0 third parties).</li>
-                            <li><FiCheck className={classes.checkIcon} /> <strong>Encryption in Transit:</strong> N/A (Local-first architecture).</li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Data Collected:</strong> None (0 bytes transmitted).</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Data Shared:</strong> None (0 third parties).</span></li>
+                            <li><FiCheck className={classes.checkIcon} /> <span><strong>Encryption in Transit:</strong> N/A (Local-first architecture).</span></li>
                         </ul>
                         <p>
                             If you have questions regarding this Privacy Policy, your data rights, or Google Play compliance, contact our team:
