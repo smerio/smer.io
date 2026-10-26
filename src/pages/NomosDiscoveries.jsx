@@ -30,7 +30,7 @@ const NomosDiscoveries = () => {
                     <nav>
                         <ul className={classes.navList}>
                             <li><a href="#how-it-works" className={classes.navLink}>How Discoveries finds patterns</a></li>
-                            <li><a href="#reading-a-card" className={classes.navLink}>Reading a Discovery card</a></li>
+                            <li><a href="#reading-a-card" className={classes.navLink}>Reading a pattern card</a></li>
                             <li><a href="#time-lagged-trigger" className={classes.navLink}>Time-lagged trigger</a></li>
                             <li><a href="#high-confidence-driver" className={classes.navLink}>High-confidence driver</a></li>
                             <li><a href="#exploratory-trigger" className={classes.navLink}>Exploratory trigger</a></li>
@@ -56,9 +56,7 @@ const NomosDiscoveries = () => {
                         <div className={classes.pageCategory}>Smerio Nomos • Insights & Statistics Guide</div>
                         <h1 className={classes.pageTitle}>How Discoveries work</h1>
                         <p className={classes.introLead}>
-                            Nomos looks for patterns across everything you log: habits, symptoms, ratings and timing. 
-                            When a pattern is strong enough that it's unlikely to be chance, it appears as a card in <strong>Insights → Discoveries</strong>. 
-                            All the analysis runs on your phone. Your data is never uploaded.
+                            Nomos looks for patterns across everything you log: habits, symptoms, ratings and timing. What affects how you feel appears in <strong>Insights → Discoveries</strong>. Patterns in your habits (when you do something, what goes together, possible triggers) appear in <strong>Insights → Trends</strong>, on the page of each tracker involved, under <strong>What stands out</strong>. All the analysis runs on your phone. Your data is never uploaded.
                         </p>
                     </header>
 
@@ -70,7 +68,7 @@ const NomosDiscoveries = () => {
                         </summary>
                         <ul className={classes.mobileTocList}>
                             <li><a href="#how-it-works">How Discoveries finds patterns</a></li>
-                            <li><a href="#reading-a-card">Reading a Discovery card</a></li>
+                            <li><a href="#reading-a-card">Reading a pattern card</a></li>
                             <li><a href="#time-lagged-trigger">Time-lagged trigger</a></li>
                             <li><a href="#high-confidence-driver">High-confidence driver</a></li>
                             <li><a href="#exploratory-trigger">Exploratory trigger</a></li>
@@ -122,38 +120,43 @@ const NomosDiscoveries = () => {
                         </ul>
                     </section>
 
-                    {/* 2. Reading a Discovery card */}
+                    {/* 2. Reading a pattern card */}
                     <section id="reading-a-card" className={classes.section}>
-                        <h2 className={classes.sectionTitle}>Reading a Discovery card</h2>
+                        <h2 className={classes.sectionTitle}>Reading a pattern card</h2>
                         <p className={classes.paragraph}>
-                            Each card in your Discoveries feed is constructed with eight key elements:
+                            Open <strong>Insights → Trends</strong> and pick a tracker. If the scan found something about it, a <strong>What stands out</strong> card sits above the charts. Each pattern in it has:
                         </p>
                         <ol className={classes.featureList}>
-                            <li><strong>A badge:</strong> the card type showing the statistical relationship (detailed below).</li>
-                            <li><strong>A title:</strong> <span className={classes.mono}>A ➔ B</span> indicates a directional trigger, while <span className={classes.mono}>A + B</span> represents things that co-occur together.</li>
-                            <li><strong>A plain sentence:</strong> clear explanation summarizing the finding with key numbers.</li>
-                            <li><strong>Outcome probability comparison:</strong> how often B happened <em>with</em> A versus <em>without</em> A. For example, "With Coffee 62% · Without Coffee 31%" means B showed up on twice as many days.</li>
-                            <li><strong>Lift:</strong> how much more likely B is with A, as a percentage. <span className={classes.mono}>+100%</span> means twice as likely.</li>
-                            <li><strong>Odds ratio:</strong> on applicable cards, another way to express relationship strength (<span className={classes.mono}>1.0×</span> means no relationship).</li>
-                            <li><strong>"Test as N-of-1 trial" button:</strong> available wherever a 2-tracker directional trial makes sense.</li>
-                            <li><strong>✕ button:</strong> to dismiss cards you do not wish to track further.</li>
+                            <li>
+                                <strong>A label</strong> for its kind:
+                                <ul style={{ marginTop: '0.35rem', paddingLeft: '1.25rem' }}>
+                                    <li><strong>When</strong>: a time you do it most (peak habit, more on weekends, more on weekdays).</li>
+                                    <li><strong>Goes together</strong>: two habits you tend to do on the same day, or two details you record in the same log.</li>
+                                    <li><strong>Possible trigger</strong>: something that might bring on a symptom, the same day or the day after.</li>
+                                    <li><strong>Pattern</strong>: anything else, such as two symptoms that come together or a pattern explained by another factor.</li>
+                                </ul>
+                            </li>
+                            <li><strong>A headline</strong> in plain words, for example &quot;Late coffee and Read often share a day&quot;.</li>
+                            <li><strong>A sentence</strong> with the key numbers, for example &quot;On days with Late coffee, Read happens 48% of the time; 24% on other days.&quot;</li>
+                            <li><strong>Two bars</strong> for the same comparison (&quot;With Late coffee&quot; against &quot;Other days&quot;) on <em>Goes together</em> and <em>Possible trigger</em> patterns.</li>
+                            <li><strong>&quot;Highlighted in the charts below&quot;</strong> on <em>When</em> patterns: the weekday and hours it talks about stand out in the Day of week and Time of day charts, and the other bars fade.</li>
+                            <li><strong>A &quot;Test it with a trial&quot; button</strong> where a trial makes sense (see <a href="#personal-trials">Personal trials</a>).</li>
                         </ol>
                         <p className={classes.paragraph}>
-                            At the top of the feed, you can filter by <strong>All Discoveries</strong>, <strong>Target Goals</strong>, or by individual tracker chips.
+                            A pattern between two trackers appears on both trackers&apos; pages. Patterns describe your logs over all time, so the highlights show only when the charts show <strong>All logs</strong>, not a single detail.
                         </p>
 
                         {/* Static Card Mock */}
-                        <div className={classes.cardMock} aria-label="Interactive Discovery Card Visual Example">
+                        <div className={classes.cardMock} aria-label="Visual example of a What stands out pattern card">
                             <div className={classes.mockHeader}>
-                                <span className={`${classes.badgeChip} ${classes.badgeCyan}`}>⏳ Time-lagged trigger</span>
-                                <span className={classes.mockClose} aria-hidden="true">✕</span>
+                                <span className={`${classes.badgeChip} ${classes.badgeCyan}`}>Possible trigger</span>
                             </div>
-                            <h3 className={classes.mockTitle}>Coffee ➔ Reflux</h3>
+                            <h3 className={classes.mockTitle}>Coffee and Reflux</h3>
                             <p className={classes.mockDescription}>
-                                Reflux is twice as likely on days after drinking coffee.
+                                On days with Coffee, Reflux happens 62% of the time; 31% on other days.
                             </p>
                             <div className={classes.comparisonBox}>
-                                <div className={classes.comparisonLabel}>Outcome Probability Comparison</div>
+                                <div className={classes.comparisonLabel}>Comparison</div>
                                 <div className={classes.comparisonRow}>
                                     <span className={classes.rowName}>With Coffee</span>
                                     <div className={classes.barTrack}>
@@ -162,21 +165,16 @@ const NomosDiscoveries = () => {
                                     <span className={classes.rowValue}>62%</span>
                                 </div>
                                 <div className={classes.comparisonRow}>
-                                    <span className={classes.rowName}>Without Coffee</span>
+                                    <span className={classes.rowName}>Other days</span>
                                     <div className={classes.barTrack}>
                                         <div className={classes.barFillWithout}></div>
                                     </div>
                                     <span className={classes.rowValue}>31%</span>
                                 </div>
                             </div>
-                            <div className={classes.mockStats}>
-                                <div className={classes.statItem}>Lift: <span className={classes.statValue}>+100%</span></div>
-                                <div className={classes.statItem}>Odds ratio: <span className={classes.statValue}>3.6×</span></div>
-                                <div className={classes.statItem}>Confidence: <span className={classes.statValue}>p ≤ 0.04</span></div>
-                            </div>
                             <div className={classes.mockActionBtn}>
                                 <FiCheckCircle aria-hidden="true" />
-                                <span>Test as N-of-1 trial</span>
+                                <span>Test it with a trial</span>
                             </div>
                         </div>
                     </section>
@@ -184,6 +182,9 @@ const NomosDiscoveries = () => {
                     {/* Card Types Section */}
                     <section className={classes.section}>
                         <h2 className={classes.sectionTitle}>Card types</h2>
+                        <p className={classes.paragraph}>
+                            In the app these appear as patterns on each tracker&apos;s <strong>Trends</strong> page, with the labels <strong>When</strong>, <strong>Goes together</strong>, <strong>Possible trigger</strong> or <strong>Pattern</strong>. The sections below explain each kind in more depth.
+                        </p>
 
                         {/* 3. Time-lagged trigger */}
                         <div id="time-lagged-trigger">
@@ -199,7 +200,7 @@ const NomosDiscoveries = () => {
                                 <strong>Example:</strong> "Late dinner ➔ Reflux: reflux rises from 18% to 47% on days after a late dinner."
                             </div>
                             <p className={classes.paragraph}>
-                                <strong>Next step:</strong> tap <em>Test as N-of-1 trial</em> to verify the relationship with a personal trial.
+                                <strong>Next step:</strong> tap <em>Test it with a trial</em> to verify the relationship with a personal trial.
                             </p>
                         </div>
 
@@ -238,7 +239,7 @@ const NomosDiscoveries = () => {
                             </h3>
                             <p className={classes.paragraph}>
                                 Two habits you tend to do together on the same day, such as "Creatine + Body training". 
-                                This describes your personal routine structure; it does not claim that one habit causes the other, so there is no trial button. 
+                                This describes your personal routine structure; it does not claim that one habit causes the other, so there&apos;s no trial button. In the app it&apos;s labelled <strong>Goes together</strong>. 
                                 Inside one tracker, a <strong>habit bundle</strong> means you usually record two specific attributes together.
                             </p>
                         </div>
@@ -317,6 +318,9 @@ const NomosDiscoveries = () => {
                             <div className={classes.exampleBox}>
                                 <em>"Likely" is still a correlation in your own data, not proof of cause.</em>
                             </div>
+                            <p className={classes.paragraph}>
+                                This table is the main part of <strong>Insights → Discoveries</strong>. Patterns about your habits themselves are on each tracker&apos;s <strong>Trends</strong> page.
+                            </p>
                         </div>
 
                         {/* 11. Timing patterns */}
@@ -336,6 +340,9 @@ const NomosDiscoveries = () => {
                                     <strong>Weekend surge / weekday routine:</strong> logged at least 1.7× more per day on weekends than weekdays (or vice versa), evaluated against the actual weekend and weekday counts in your personal history.
                                 </li>
                             </ul>
+                            <p className={classes.paragraph}>
+                                In the app these are labelled <strong>When</strong>. The weekday and hours they describe are highlighted in that tracker&apos;s <strong>Day of week</strong> and <strong>Time of day</strong> charts, so you can see the pattern in your own bars.
+                            </p>
                         </div>
                     </section>
 
@@ -346,7 +353,7 @@ const NomosDiscoveries = () => {
                             A personal trial (an &quot;N-of-1&quot; study: one person, you) tests whether something you do really affects how you feel, <strong>for you</strong>.
                         </p>
                         <p className={classes.paragraph}>
-                            <strong>How to start:</strong> on a Discovery card that links two trackers, tap <strong>Test as N-of-1 trial</strong>. The button appears on time-lagged, high-confidence and exploratory cards. It doesn&apos;t appear on routine stacks, symptom co-occurrences, mediated confounders, attribute-level drivers or rating cards such as &quot;Alcohol ➔ Mood&quot;.
+                            <strong>How to start:</strong> open <strong>Insights → Trends</strong>, pick the tracker, and find the pattern under <strong>What stands out</strong>. On a pattern that links two trackers, tap <strong>Test it with a trial</strong>. The button appears on possible triggers (time-lagged, high-confidence and exploratory patterns). It doesn&apos;t appear on habits that go together, symptom co-occurrences, patterns explained by another factor, attribute-level drivers, or the &quot;What affects your mood&quot; table.
                         </p>
                         <p className={classes.paragraph}>
                             <strong>It follows your usual rhythm.</strong> Before you start, Nomos shows how often you&apos;ve done it over the last 8 weeks, for example &quot;about 3 times a week&quot;, and you can correct it. The trial is sized to that rhythm so you never have to change your routine to take part:
