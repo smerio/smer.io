@@ -115,7 +115,7 @@ const NomosDiscoveries = () => {
                                 <strong>Hidden and archived trackers:</strong> left out of Discoveries entirely, including from the baseline. Hiding a tracker removes its cards on the next scan.
                             </li>
                             <li>
-                                <strong>Dismissed cards stay dismissed:</strong> cards you dismiss with ✕ stay dismissed after future scans. Cards that stop meeting the statistical thresholds disappear on their own.
+                                Patterns that stop meeting the thresholds disappear on their own after a scan.
                             </li>
                         </ul>
                     </section>
