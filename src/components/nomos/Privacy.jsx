@@ -11,7 +11,7 @@ const Privacy = () => {
                         <span>Google Play Store Compliant</span>
                     </div>
                     <h2 className={classes.title}>Privacy Policy</h2>
-                    <p className={classes.effectiveDate}>Last updated: 21 October 2026</p>
+                    <p className={classes.effectiveDate}>Last updated: 26 October 2026</p>
                     <p className={classes.lead}>
                         Smerio Nomos is engineered from the ground up as a <strong>100% local-first, zero-telemetry mood and habit tracker</strong>. 
                         We believe that your personal routines, daily symptoms, statistical patterns, and lifestyle experiments belong solely to you.
@@ -77,7 +77,11 @@ const Privacy = () => {
                                 <tbody>
                                     <tr>
                                         <td><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>)</td>
-                                        <td>Daily check-in and goal reminders, logging confirmations with Undo.</td>
+                                        <td>Daily check-in and goal reminders, logging confirmations with Undo, and the time of a running timer with its alerts (&quot;Still working?&quot;, &quot;25 min done&quot;).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Alarms &amp; reminders</strong> (<code>SCHEDULE_EXACT_ALARM</code>)</td>
+                                        <td>Optional. Lets a countdown timer alert you the moment it ends, and a stopwatch ask &quot;Still working?&quot; after an hour. You allow it in Android&apos;s settings; without it the alert may come a few minutes late.</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Read steps</strong> (<code>android.permission.health.READ_STEPS</code>)</td>
@@ -93,7 +97,7 @@ const Privacy = () => {
                                     </tr>
                                     <tr>
                                         <td><strong>Run at startup, keep awake, foreground service</strong> (<code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>)</td>
-                                        <td>Used by Android&apos;s WorkManager to keep reminders and the on-device analysis scheduled after a restart.</td>
+                                        <td>Used by Android&apos;s WorkManager to keep reminders and the on-device analysis scheduled after a restart, and to bring back a timer that was running when the phone restarted.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -110,6 +114,9 @@ const Privacy = () => {
                         </p>
                         <p>
                             This can include sensitive personal information you choose to record, such as mood ratings, symptoms, sleep, medication or alcohol use, and, if you connect Health Connect, your daily steps and sleep. It is treated exactly like everything else: stored only on your phone and never sent to us.
+                        </p>
+                        <p>
+                            Timers work the same way: while a stopwatch or countdown runs, Nomos keeps its start time on your phone, and when you stop it the time spent is saved as a log like any other.
                         </p>
                         <ul className={classes.list}>
                             <li><FiCheck className={classes.checkIcon} /> <span><strong>AES-256-GCM Encrypted Snapshots:</strong> When creating a backup, Nomos encrypts your entire database using AES-256-GCM authenticated encryption with a user-supplied password.</span></li>
